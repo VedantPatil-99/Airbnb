@@ -1,0 +1,23 @@
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment variables file (if used)
+.env
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore package-lock.json if you don't want it tracked (optional)
+# Uncomment the following line if you regenerate this file frequently and want it excluded:
+# package-lock.json
