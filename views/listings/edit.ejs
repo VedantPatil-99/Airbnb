@@ -1,53 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Edit Listing</title>
-	</head>
-	<body>
-		<h2>Edit your listing</h2>
-		<form action="/listings/<%= listing._id %>?_method=PUT" method="POST">
-			<input
-				type="text"
-				name="listing[title]"
-				id="title"
-				value="<%= listing.title %>"
-			/>
-			<br /><br />
-			<textarea type="text" name="listing[description]" id="description">
+<% layout("/layouts/boilerplate") %>
+<body>
+	<h2>Edit your listing</h2>
+	<form action="/listings/<%= listing._id %>?_method=PUT" method="POST">
+		<input
+			type="text"
+			name="listing[title]"
+			id="title"
+			value="<%= listing.title %>"
+		/>
+		<br /><br />
+		<textarea type="text" name="listing[description]" id="description">
 <%= listing.description %></textarea
-			>
-			<br /><br />
-			<input
-				type="text"
-				name="listing[image].URL"
-				id="image"
-				value="<%= listing.image %>"
-			/>
-			<br /><br />
-			<input
-				type="number"
-				name="listing[price]"
-				id="price"
-				value="<%= listing.price %>"
-			/>
-			<br /><br />
-			<input
-				type="text"
-				name="listing[location]"
-				id="location"
-				value="<%= listing.location %>"
-			/>
-			<br /><br />
-			<input
-				type="text"
-				name="listing[country]"
-				id="country"
-				value="<%= listing.country %>"
-			/>
-			<br /><br />
-			<button type="submit">Submit</button>
-		</form>
-	</body>
-</html>
+		>
+		<br /><br />
+		<input
+			type="text"
+			name="listing[image].URL"
+			id="image"
+			value="<%= listing.image %>"
+		/>
+		<br /><br />
+		<input
+			type="number"
+			name="listing[price]"
+			id="price"
+			value="<%= listing.price %>"
+		/>
+		<br /><br />
+		<input
+			type="text"
+			name="listing[location]"
+			id="location"
+			value="<%= listing.location %>"
+		/>
+		<br /><br />
+		<input
+			type="text"
+			name="listing[country]"
+			id="country"
+			value="<%= listing.country %>"
+		/>
+		<br /><br />
+		<button type="submit">Submit</button>
+	</form>
+</body>

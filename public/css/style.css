@@ -1,0 +1,30 @@
+nav {
+	height: 4.5rem;
+	background-color: aquamarine;
+}
+
+.nav-link {
+	color: black;
+}
+
+.f-info {
+	background-color: aliceblue;
+	height: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* flex-direction: column-reverse; */
+}
+
+.f-info-p1,
+.f-info-p2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.f-links a::before {
+	content: "· ";
+	padding-left: 1rem;
+}
