@@ -3,22 +3,30 @@
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
+	font-size: 0.93rem;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 .container-fluid {
 	padding-inline: 40px;
 }
 
+/* NAVBAR - includes/navbar.ejs */
+
 nav {
-	height: 4.5rem;
-	/* background-color: aquamarine; */
+	height: 5rem;
 }
 
 .nav-link {
 	color: black;
 }
 
-/* CARDS */
+/* CARDS - listings/index.js */
 
 .card {
 	border: none;
@@ -51,14 +59,14 @@ nav {
 
 .card-text {
 	margin: 0.6rem 0 0 0;
-	line-height: 1.3rem;
+	line-height: 1.4rem;
 }
 
 .price {
 	font-weight: 600;
 }
 
-/* FOOTER */
+/* FOOTER - includes/footer.ejs */
 
 footer {
 	font-size: 0.9rem;
@@ -67,15 +75,19 @@ footer {
 footer a,
 span {
 	text-decoration: none;
-	color: #222222;
+	color: black;
 }
 
 footer a:hover,
 .f-info-toggle span:hover {
 	text-decoration: underline;
-	color: #222222;
+	color: black;
 }
 
 footer .f-info-p1 ul li {
-	padding-left: 1rem;
+	padding-left: 0.8rem;
+}
+
+.f-info-toggle span {
+	font-weight: 600;
 }

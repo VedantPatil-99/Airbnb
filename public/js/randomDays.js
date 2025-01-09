@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		// Update km in the corresponding element
 		if (kmElem[index]) {
-			kmElem[index].textContent = `${result.km} kilometers away`;
+			kmElem[index].textContent = `${result.km}  kilometers away`;
 		}
 	});
 });
