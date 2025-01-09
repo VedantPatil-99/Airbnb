@@ -1,11 +1,35 @@
 <% layout("/layouts/boilerplate.ejs") %>
-	<body>
-		<h2>All Listings</h2>
-		<ul>
-		<ul>
-			<% for( let listing of allListings ) { %>
-			<li><a href="/listings/<%= listing._id %>"><%= listing.title %></a></li>
-			<% } %>
-		</ul>
-	</body>
 
+<body>
+	<h2>All Listings</h2>
+
+	<div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1">
+		<% for( let listing of allListings ) { %>
+		<a href="/listings/<%= listing._id %>" class="card col">
+			<img
+				src="<%= listing.image %>"
+				class="card-img-top"
+				alt="listing_image"
+			/>
+			<div class="card-body">
+				<p class="card-text">
+					<span class="card-title"
+						><%= listing.location %>, <%= listing.country %></span
+					><br />
+					<span class="card-text">
+						<span class="random-date">Loading date...</span><br />
+						<span class="random-km">Loading km...</span>
+					</span>
+				</p>
+				<p class="price py-2">
+					&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %><span>
+						night</span
+					>
+				</p>
+			</div>
+		</a>
+		<% } %>
+	</div>
+
+	<script src="./js/randomDays.js"></script>
+</body>

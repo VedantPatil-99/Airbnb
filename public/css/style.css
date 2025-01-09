@@ -1,30 +1,81 @@
+* {
+	font-family: "Plus Jakarta Sans", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.container-fluid {
+	padding-inline: 40px;
+}
+
 nav {
 	height: 4.5rem;
-	background-color: aquamarine;
+	/* background-color: aquamarine; */
 }
 
 .nav-link {
 	color: black;
 }
 
-.f-info {
-	background-color: aliceblue;
-	height: 2rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	/* flex-direction: column-reverse; */
+/* CARDS */
+
+.card {
+	border: none;
+	text-decoration: none;
+	color: #222222;
+	margin-bottom: 2rem;
+	height: 24.2rem;
 }
 
-.f-info-p1,
-.f-info-p2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
+.card:hover {
+	text-decoration: none;
+	color: #222222;
 }
 
-.f-links a::before {
-	content: "· ";
+.card .card-img-top {
+	border-radius: 0.75rem;
+	height: 17.5rem;
+	object-fit: cover;
+}
+
+.card-body {
+	padding: 0;
+	height: 5rem;
+	font-size: 0.85rem;
+}
+
+.card-title {
+	font-weight: 600;
+}
+
+.card-text {
+	margin: 0.6rem 0 0 0;
+	line-height: 1.3rem;
+}
+
+.price {
+	font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+	font-size: 0.9rem;
+}
+
+footer a,
+span {
+	text-decoration: none;
+	color: #222222;
+}
+
+footer a:hover,
+.f-info-toggle span:hover {
+	text-decoration: underline;
+	color: #222222;
+}
+
+footer .f-info-p1 ul li {
 	padding-left: 1rem;
 }
