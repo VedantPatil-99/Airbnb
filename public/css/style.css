@@ -32,8 +32,8 @@ nav {
 	border: none;
 	text-decoration: none;
 	color: #222222;
-	margin-bottom: 2rem;
-	height: 24.2rem;
+	/* margin-bottom: 2rem; */
+	/* height: 24.2rem; */
 }
 
 .card:hover {
@@ -42,13 +42,12 @@ nav {
 }
 
 .card .card-img-top {
-	border-radius: 0.75rem;
-	height: 17.5rem;
+	border-radius: 0.8rem;
+	height: 18.85rem;
 	object-fit: cover;
 }
 
 .card-body {
-	padding: 0;
 	height: 5rem;
 	font-size: 0.85rem;
 }
@@ -63,7 +62,7 @@ nav {
 }
 
 .price {
-	font-weight: 600;
+	font-weight: 700;
 }
 
 /* FOOTER - includes/footer.ejs */
@@ -90,4 +89,8 @@ footer .f-info-p1 ul li {
 
 .f-info-toggle span {
 	font-weight: 600;
+}
+
+.show-img {
+	height: 22rem;
 }

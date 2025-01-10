@@ -1,15 +1,38 @@
 <% layout("/layouts/boilerplate") %>
-	<body>
-		<h3>Listing Details</h3>
-			<li><%= listing.title %></li>
-			<li><%= listing.description %></li>
-			<li>&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %></li>
-			<li><%= listing.location %></li>
-			<li><%= listing.country %></li>
-		</ul>
-		<a href="/listings/<%= listing._id %>/edit">Edit</a>
-	  <form action="/listings/<%= listing._id %>?_method=DELETE" method="post">
-			<button>Delete</button>
-		</form>
-	</body>
 
+<div
+	class="row col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 offset-0"
+>
+	<div class="col">
+		<div class="card mt-4 h-100 bg-light">
+			<img
+				src="<%= listing.image %>"
+				class="card-img-top show-img shadow"
+				alt="Main_image"
+			/>
+
+			<div class="card-body h-auto">
+				<h5 class="card-title"><%= listing.title %></h5>
+				<p class="card-text fw-medium"><%= listing.description %></p>
+				<p class="card-text fw-medium"><%= listing.location %></p>
+				<span class="card-text fw-medium"><%= listing.country %></span>
+				<p class="price pt-2">
+					&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %><span>
+						night</span
+					>
+				</p>
+				<div class="btns d-flex mt-4">
+					<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark"
+						>Edit</a
+					>
+					<form
+						action="/listings/<%= listing._id %>?_method=DELETE"
+						method="post"
+					>
+						<button class="btn btn-danger offset-3">Delete</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
