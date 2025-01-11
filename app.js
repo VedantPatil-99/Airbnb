@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError");
+const { listingSchema } = require("./schema.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -33,6 +34,19 @@ async function main() {
 app.get("/", (req, res) => {
 	res.send("Hi, I'm root.");
 });
+
+// Middleware
+const validateListing = (req, res, next) => {
+	let { error } = listingSchema.validate(req.body);
+
+	console.log(error.details[0].message);
+	if (error) {
+		let errMsg = error.details.map((ele) => ele.message).join(",");
+		throw new ExpressError(400, errMsg);
+	} else {
+		next();
+	}
+};
 
 // Index Route
 app.get(
@@ -61,6 +75,7 @@ app.get(
 // Create Route
 app.post(
 	"/listings",
+	validateListing,
 	wrapAsync(async (req, res) => {
 		let newListing = new Listing(req.body.listing);
 		await newListing.save();
@@ -105,7 +120,8 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
 	let { statusCode = 500, message = "Something Went Wrong!" } = err;
-	res.status(statusCode).send(message);
+	res.status(statusCode).render("error.ejs", { message });
+	// res.status(statusCode).send(message);
 });
 
 app.listen(8080, (res) => {
