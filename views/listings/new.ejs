@@ -1,81 +1,95 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="container my-3">
-	<div class="row col-lg-6 col-md-9 col-sm-9 offset-md-3 offset-sm-2">
-		<form action="/listings" method="POST" class="my-2">
-			<h4>Create a new listing</h4>
+<div class="invisible">Spacing</div>
+<div class="row col-lg-8 col-md-10 offset-md-1 offset-lg-2">
+	<form action="/listings" method="POST" class="needs-validation" novalidate>
+		<h4>Create a new listing</h4>
 
-			<div class="mb-3">
-				<label for="title" class="form-label">Title: </label>
+		<div class="mb-3">
+			<label for="title" class="form-label">Title: </label>
+			<input
+				type="text"
+				name="listing[title]"
+				id="title"
+				placeholder="Add a catchy title here"
+				class="form-control"
+				required
+			/>
+			<div class="valid-feedback">Looks good!</div>
+		</div>
+
+		<div class="mb-2">
+			<label for="description" class="form-label">Description: </label>
+			<textarea
+				type="text"
+				name="listing[description]"
+				id="description"
+				placeholder="Tell me more details..."
+				class="form-control"
+				required
+			></textarea>
+			<div class="valid-feedback">Looks good!</div>
+		</div>
+
+		<div class="mb-3">
+			<label for="image" class="form-label">Image URL: </label>
+			<input
+				type="text"
+				name="listing[image]"
+				id="image"
+				placeholder="Paste image URL/Link"
+				class="form-control"
+			/>
+		</div>
+
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label for="price" class="form-label">Price: </label>
 				<input
-					type="text"
-					name="listing[title]"
-					id="title"
-					placeholder="Add a catchy title here"
+					type="number"
+					name="listing[price]"
+					id="price"
+					placeholder="Enter price per night"
 					class="form-control"
+					required
 				/>
+				<div class="invalid-feedback">Please enter a valid price.</div>
 			</div>
 
-			<div class="mb-2">
-				<label for="description" class="form-label">Description: </label>
-				<textarea
+			<div class="mb-3 col-md-8">
+				<label for="country" class="form-label">Country: </label
+				><input
 					type="text"
-					name="listing[description]"
-					id="description"
-					placeholder="Tell me more..."
+					name="listing[country]"
+					id="country"
+					placeholder="Enter country"
 					class="form-control"
-				></textarea>
-			</div>
-
-			<div class="mb-3">
-				<label for="image" class="form-label">Image URL: </label>
-				<input
-					type="text"
-					name="listing[image]"
-					id="image"
-					placeholder="Paste image URL/Link"
-					class="form-control"
+					required
 				/>
+				<div class="invalid-feedback">Please provide a valid country.</div>
 			</div>
+		</div>
 
-			<div class="row">
-				<div class="mb-3 col-md-4">
-					<label for="price" class="form-label">Price: </label>
-					<input
-						type="number"
-						name="listing[price]"
-						id="price"
-						placeholder="Enter price per night"
-						class="form-control"
-					/>
-				</div>
+		<div class="mb-3">
+			<label for="location" class="form-label">Location: </label>
+			<input
+				type="text"
+				name="listing[location]"
+				id="location"
+				placeholder="House no./street/landmark, village/city/town"
+				class="form-control"
+				required
+			/>
+			<div class="invalid-feedback">Please provide a valid location.</div>
+		</div>
 
-				<div class="mb-3 col-md-8">
-					<label for="country" class="form-label">Country: </label
-					><input
-						type="text"
-						name="listing[country]"
-						id="country"
-						placeholder="Enter country"
-						class="form-control"
-					/>
-				</div>
-			</div>
-
-			<div class="mb-3">
-				<label for="location" class="form-label">Location: </label>
-				<input
-					type="text"
-					name="listing[location]"
-					id="location"
-					placeholder="House no./street/landmark,  village/city/town"
-					class="form-control"
-				/>
-			</div>
-
-			<button type="submit" class="btn btn-danger col-lg-3 col-md-2 col-sm-2">
-				Add&nbsp; Now
-			</button>
-		</form>
-	</div>
+		<button
+			type="submit"
+			class="btn btn-danger col-lg-2 col-md-2 col-sm-3 col-3"
+		>
+			Add&nbsp; Now
+		</button>
+	</form>
 </div>
+
+<script src="../js/script.js"></script>

@@ -43,18 +43,18 @@ app.get("/listings/new", (req, res) => {
 	res.render("./listings/new.ejs");
 });
 
-// Create Route
-app.post("/listings", async (req, res) => {
-	let newListing = new Listing(req.body.listing);
-	await newListing.save();
-	res.redirect("/listings");
-});
-
 // Show Route
 app.get("/listings/:id", async (req, res) => {
 	let { id } = req.params;
 	let listing = await Listing.findById(id);
 	res.render("./listings/show.ejs", { listing });
+});
+
+// Create Route
+app.post("/listings", async (req, res) => {
+	let newListing = new Listing(req.body.listing);
+	await newListing.save();
+	res.redirect("/listings");
 });
 
 // Edit Route
@@ -67,7 +67,7 @@ app.get("/listings/:id/edit", async (req, res) => {
 // Update Route
 app.put("/listings/:id", async (req, res) => {
 	let { id } = req.params;
-	console.log(req.body.listing);
+	// console.log(req.body.listing);
 	await Listing.findByIdAndUpdate(id, { ...req.body.listing });
 	res.redirect(`/listings/${id}`);
 });
