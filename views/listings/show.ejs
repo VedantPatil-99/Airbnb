@@ -85,12 +85,24 @@
 		<% for( review of listing.reviews) { %>
 
 		<div class="card my-3 bg-light">
-			<div class="card-body h-auto">
-				<h6 class="card-title">Username</h6>
-				<p class="card-subtitle mb-2 text-body-secondary">6 years on Airbnb</p>
-				<p class="card-text mb-1"><%= review.comment %></p>
-				<a href="#" class="card-link">Show More</a>
+			<div class="card-body h-auto p-0">
+				<h6 class="card-title m-0">Username</h6>
+				<p class="card-subtitle text-body-secondary fs-6 mb-2">6 years on Airbnb</p>
+				<small class="card-text fw-semibold">
+					<%= review.rating %> stars · <%= new
+					Date(review.createdAt).toDateString() %>
+				</small>
+				<p class="card-text mb-2 mt-0"><%= review.comment %></p>
+
+				<div class="row row-cols-lg-3"><a href="#" class="card-link">Show More</a>
+				<form
+					action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
+					method="post" class="m-0 p-0"
+				>
+					<button type="submit" class="btn btn-dark btn-sm">Delete</button></div>
+				</form>
 			</div>
+
 		</div>
 		<% } %>
 	</div>
