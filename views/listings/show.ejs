@@ -71,7 +71,29 @@
 			</form>
 		</div>
 
-		<!-- ... -->
-		<div class="invisible">Spacing</div>
+		<!--  -->
 	</div>
 </div>
+
+<!-- All Reviews -->
+<div
+	class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 offset-0"
+>
+	<div
+		class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1"
+	>
+		<% for( review of listing.reviews) { %>
+
+		<div class="card my-3 bg-light">
+			<div class="card-body h-auto">
+				<h6 class="card-title">Username</h6>
+				<p class="card-subtitle mb-2 text-body-secondary">6 years on Airbnb</p>
+				<p class="card-text mb-1"><%= review.comment %></p>
+				<a href="#" class="card-link">Show More</a>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+
+<div class="invisible" style="height: 20vh">Spacing</div>
