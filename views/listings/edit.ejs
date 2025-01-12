@@ -1,92 +1,90 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-	<div class="container">
-		<div class="row col-lg-8 col-md-10 offset-md-1 offset-lg-2 my-3">
-			<h4 class="pb-2">Edit your listing</h4>
-			<form
-				action="/listings/<%= listing._id %>?_method=PUT"
-				method="POST"
-				class="needs-validation"
-			>
-				<div class="mb-3">
-					<label for="title" class="form-label">Title: </label>
-					<input
-						type="text"
-						name="listing[title]"
-						id="title"
-						value="<%= listing.title %>"
-						class="form-control is-valid"
-						required
-					/>
-				</div>
 
-				<div class="mb-3">
-					<label for="description" class="form-label">Description: </label>
-					<textarea
-						type="text"
-						name="listing[description]"
-						id="description"
-						class="form-control is-valid"
-						required
-					>
+<div class="container">
+	<div class="row col-lg-8 col-md-10 offset-md-1 offset-lg-2 my-3">
+		<h4 class="pb-2">Edit your listing</h4>
+		<form
+			action="/listings/<%= listing._id %>?_method=PUT"
+			method="POST"
+			class="needs-validation"
+		>
+			<div class="mb-3">
+				<label for="title" class="form-label">Title: </label>
+				<input
+					type="text"
+					name="listing[title]"
+					id="title"
+					value="<%= listing.title %>"
+					class="form-control is-valid"
+					required
+				/>
+			</div>
+
+			<div class="mb-3">
+				<label for="description" class="form-label">Description: </label>
+				<textarea
+					type="text"
+					name="listing[description]"
+					id="description"
+					class="form-control is-valid"
+					required
+				>
 <%= listing.description %>
 					</textarea
-					>
-				</div>
+				>
+			</div>
 
-				<div class="mb-3">
-					<label for="image" class="form-label">Image: </label>
+			<div class="mb-3">
+				<label for="image" class="form-label">Image: </label>
+				<input
+					type="text"
+					name="listing[image].URL"
+					id="image"
+					value="<%= listing.image %>"
+					class="form-control is-valid"
+					required
+				/>
+			</div>
+
+			<div class="row">
+				<div class="mb-3 col-md-4">
+					<label for="price" class="form-label">Price: </label>
 					<input
-						type="text"
-						name="listing[image].URL"
-						id="image"
-						value="<%= listing.image %>"
+						type="number"
+						name="listing[price]"
+						id="price"
+						value="<%= listing.price %>"
 						class="form-control is-valid"
 						required
 					/>
 				</div>
 
-				<div class="row">
-					<div class="mb-3 col-md-4">
-						<label for="price" class="form-label">Price: </label>
-						<input
-							type="number"
-							name="listing[price]"
-							id="price"
-							value="<%= listing.price %>"
-							class="form-control is-valid"
-							required
-						/>
-					</div>
-
-					<div class="mb-3 col-md-8">
-						<label for="location" class="form-label">Location: </label>
-						<input
-							type="text"
-							name="listing[location]"
-							id="location"
-							value="<%= listing.location %>"
-							class="form-control is-valid"
-							required
-						/>
-					</div>
-				</div>
-
-				<div class="mb-3">
-					<label for="country" class="form-label">Country: </label>
+				<div class="mb-3 col-md-8">
+					<label for="location" class="form-label">Location: </label>
 					<input
 						type="text"
-						name="listing[country]"
-						id="country"
-						value="<%= listing.country %>"
+						name="listing[location]"
+						id="location"
+						value="<%= listing.location %>"
 						class="form-control is-valid"
 						required
 					/>
 				</div>
+			</div>
 
-				<button type="submit" class="btn btn-dark col-md-2 mt-2">Edit</button>
-			</form>
-		</div>
+			<div class="mb-3">
+				<label for="country" class="form-label">Country: </label>
+				<input
+					type="text"
+					name="listing[country]"
+					id="country"
+					value="<%= listing.country %>"
+					class="form-control is-valid"
+					required
+				/>
+			</div>
+
+			<button type="submit" class="btn btn-dark col-md-2 mt-2">Edit</button>
+		</form>
 	</div>
-	<script src="../js/script.js"></script>
-</body>
+</div>

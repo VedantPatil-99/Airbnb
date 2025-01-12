@@ -37,7 +37,13 @@
 
 		<div class="reviews-section border-top mt-2">
 			<h5 class="py-2 mt-2">Leave a review</h5>
-			<form action="/listings/<%= listing._id %>/reviews" method="post">
+
+			<form
+				action="/listings/<%= listing._id %>/reviews"
+				method="post"
+				class="needs-validation"
+				novalidate
+			>
 				<label for="rating" class="form-label">Rate Us: </label>
 				<input
 					type="range"
@@ -55,8 +61,10 @@
 						id="comment"
 						style="height: 6rem"
 						name="review[comment]"
+						required
 					></textarea>
-					<label for="comment">Comments</label>
+					<label for="comment">Comments:</label>
+					<div class="invalid-feedback">Please add a comment here.</div>
 				</div>
 
 				<button type="submit" class="btn btn-outline-dark my-2">Submit</button>
