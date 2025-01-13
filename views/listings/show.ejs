@@ -12,7 +12,9 @@
 			/>
 
 			<div class="card-body h-auto">
-				<p class="card-text fw-medium">Owned by: <i><%= listing.owner.username %></i></p>
+				<p class="card-text fw-medium">
+					Owned by: <i><%= listing.owner.username %></i>
+				</p>
 				<h5 class="card-title"><%= listing.title %></h5>
 				<p class="card-text fw-medium"><%= listing.description %></p>
 				<p class="card-text fw-medium"><%= listing.location %></p>
@@ -22,6 +24,8 @@
 						night</span
 					>
 				</p>
+
+				<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
 				<div class="btns d-flex mt-4">
 					<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark"
 						>Edit</a
@@ -33,6 +37,7 @@
 						<button class="btn btn-danger offset-3">Delete</button>
 					</form>
 				</div>
+				<% } %>
 			</div>
 		</div>
 
@@ -88,22 +93,26 @@
 		<div class="card my-3 bg-light">
 			<div class="card-body h-auto p-0">
 				<h6 class="card-title m-0">Username</h6>
-				<p class="card-subtitle text-body-secondary fs-6 mb-2">6 years on Airbnb</p>
+				<p class="card-subtitle text-body-secondary fs-6 mb-2">
+					6 years on Airbnb
+				</p>
 				<small class="card-text fw-semibold">
 					<%= review.rating %> stars · <%= new
 					Date(review.createdAt).toDateString() %>
 				</small>
 				<p class="card-text mb-2 mt-0"><%= review.comment %></p>
 
-				<div class="row row-cols-lg-3"><a href="#" class="card-link">Show More</a>
-				<form
-					action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
-					method="post" class="m-0 p-0"
-				>
-					<button type="submit" class="btn btn-dark btn-sm">Delete</button></div>
-				</form>
+				<div class="row row-cols-lg-3">
+					<a href="#" class="card-link">Show More</a>
+					<form
+						action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
+						method="post"
+						class="m-0 p-0"
+					>
+						<button type="submit" class="btn btn-dark btn-sm">Delete</button>
+					</form>
+				</div>
 			</div>
-
 		</div>
 		<% } %>
 	</div>
