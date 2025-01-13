@@ -18,6 +18,7 @@ const User = require("./models/user.js");
 // Routers
 const listingsRouter = require("./routes/listing.js");
 const reviewsRouter = require("./routes/review.js");
+const usersRouter = require("./routes/user.js");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -73,18 +74,19 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.get("/demouser", async (req, res) => {
-	let fakeUser = {
-		email: "abc@gmail.com",
-		username: "demo",
-	};
+// app.get("/demouser", async (req, res) => {
+// 	let fakeUser = {
+// 		email: "abc@gmail.com",
+// 		username: "demo",
+// 	};
 
-	let regUser = await User.register(fakeUser, "password");
-	res.send(regUser);
-});
+// 	let regUser = await User.register(fakeUser, "password");
+// 	res.send(regUser);
+// });
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
+app.use("/", usersRouter);
 
 app.all("*", (req, res, next) => {
 	next(new ExpressError(404, "Page Not Found!"));
