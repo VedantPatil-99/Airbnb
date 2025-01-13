@@ -15,9 +15,16 @@ router.post(
 			let { username, email, password } = req.body;
 			const newUser = new User({ email, username });
 			const regUser = await User.register(newUser, password);
-
-			req.flash("success", "Account created successfully! Welcome to Airbnb!");
-			res.redirect("/listings");
+			req.login(regUser, (err) => {
+				if (err) {
+					return next(err);
+				}
+				req.flash(
+					"success",
+					"Account created successfully! Welcome to Airbnb!",
+				);
+				res.redirect("/listings");
+			});
 		} catch (e) {
 			req.flash("error", e.message);
 			res.redirect("/signup");

@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bg-light">
-	<div class="d-flex justify-content-between align-items-centre">
+<nav class="navbar navbar-expand-md bg-light">
+	<div class="d-flex justify-content-around align-items-centre">
 		<a class="navbar-brand text-danger" href="/"
 			><%- include('../includes/logo.ejs') %></a
 		>
@@ -16,6 +16,14 @@
 				<a class="nav-link" href="/">Home</a>
 				<a class="nav-link" href="/listings">All listings</a>
 				<a class="nav-link" href="/listings/new">Add new listings</a>
+			</div>
+			<div class="navbar-nav ms-auto">
+				<% if (!currUser) { %>
+				<a class="nav-link fw-semibold" href="/signup">SignUp</a>
+				<a class="nav-link fw-semibold" href="/login">Login</a>
+				<% } %> <% if (currUser) { %>
+				<a class="nav-link text-danger fw-semibold" href="/logout">Logout</a>
+				<% } %>
 			</div>
 		</div>
 	</div>
