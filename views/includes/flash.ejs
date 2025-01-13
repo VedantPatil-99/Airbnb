@@ -1,0 +1,65 @@
+<!-- For Error flash -->
+
+<% if (success && success.length) { %>
+<div
+	aria-live="assertive"
+	aria-atomic="true"
+	role="alert"
+	class="position-relative bd-example-toasts rounded-3"
+>
+	<div class="toast-container p-3 bottom-0 end-0" data-bs-delay="2500">
+		<div class="toast text-bg-success">
+			<div class="toast-header">
+				<img
+					src="../icon/Airbnb_icon.png"
+					class="rounded me-2"
+					alt="logo"
+					style="height: 1.5rem; width: 1.5rem"
+				/>
+				<strong class="me-auto text-center">Airbnb</strong>
+				<small>just now</small>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="toast"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="toast-body"><%= success %></div>
+		</div>
+	</div>
+</div>
+<% } %>
+
+<!-- For Error flash -->
+
+<% if (error && error.length) { %>
+<div
+	aria-live="assertive"
+	aria-atomic="true"
+	role="alert"
+	class="position-relative bd-example-toasts rounded-3"
+>
+	<div class="toast-container p-3 bottom-0 end-0" data-bs-delay="3000">
+		<div class="toast text-bg-danger">
+			<div class="toast-header">
+				<img
+					src="../icon/Airbnb_icon.png"
+					class="rounded me-2"
+					alt="logo"
+					style="height: 1.5rem; width: 1.5rem"
+				/>
+				<strong class="me-auto text-center">Airbnb</strong>
+				<small>just now</small>
+				<button
+					type="button"
+					class="btn-close"
+					data-bs-dismiss="toast"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="toast-body"><%= error %></div>
+		</div>
+	</div>
+</div>
+<% } %>
