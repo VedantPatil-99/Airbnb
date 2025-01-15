@@ -94,3 +94,8 @@ footer .f-info-p1 ul li {
 .show-img {
 	height: 22rem;
 }
+
+/* Mapbox */
+#map {
+	height: 25rem;
+}
