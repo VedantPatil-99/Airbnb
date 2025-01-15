@@ -7,6 +7,7 @@
 			action="/listings/<%= listing._id %>?_method=PUT"
 			method="POST"
 			class="needs-validation"
+			enctype="multipart/form-data"
 		>
 			<div class="mb-3">
 				<label for="title" class="form-label">Title: </label>
@@ -36,14 +37,12 @@
 			</div>
 
 			<div class="mb-3">
-				<label for="image" class="form-label">Image: </label>
+				<label for="image" class="form-label">Upload New Image: </label>
 				<input
-					type="text"
-					name="listing[image].URL"
+					name="listing[image]"
 					id="image"
-					value="<%= listing.image %>"
+					type="file"
 					class="form-control is-valid"
-					required
 				/>
 			</div>
 
