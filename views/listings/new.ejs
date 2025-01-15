@@ -2,7 +2,13 @@
 
 <div class="invisible">Spacing</div>
 <div class="row col-lg-8 col-md-10 offset-md-1 offset-lg-2">
-	<form action="/listings" method="POST" class="needs-validation" novalidate>
+	<form
+		action="/listings"
+		method="POST"
+		class="needs-validation"
+		enctype="multipart/form-data"
+		novalidate
+	>
 		<h4>Create a new listing</h4>
 
 		<div class="mb-3">
@@ -32,13 +38,12 @@
 		</div>
 
 		<div class="mb-3">
-			<label for="image" class="form-label">Image URL: </label>
+			<label for="image" class="form-label">Upload Image:</label>
 			<input
-				type="text"
-				name="listing[image]"
-				id="image"
-				placeholder="Paste image URL/Link"
 				class="form-control"
+				type="file"
+				id="image"
+				name="listing[image]"
 			/>
 		</div>
 

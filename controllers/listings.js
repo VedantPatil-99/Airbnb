@@ -9,7 +9,7 @@ module.exports.renderNewForm = (req, res) => {
 	res.render("./listings/new.ejs");
 };
 
-module.exports.showLisitings = async (req, res) => {
+module.exports.showListings = async (req, res) => {
 	let { id } = req.params;
 	let listing = await Listing.findById(id)
 		.populate({ path: "reviews", populate: { path: "author" } })
