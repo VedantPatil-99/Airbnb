@@ -1,6 +1,7 @@
 <% layout("/layouts/boilerplate") %>
 <script>
 	let mapToken = "<%= process.env.MAP_TOKEN %>";
+	let listing = <%- JSON.stringify(listing) %>;
 </script>
 
 <div
@@ -169,5 +170,4 @@
 		<div id="map" class="mt-4 shadow-sm rounded-1"></div>
 	</div>
 </div>
-
 <div class="invisible" style="height: 20vh">Spacing</div>

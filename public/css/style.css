@@ -99,3 +99,72 @@ footer .f-info-p1 ul li {
 #map {
 	height: 25rem;
 }
+
+.mapboxgl-popup-content {
+	width: 20rem;
+	padding: 1.2rem;
+	text-align: center;
+	border-radius: 0.6rem;
+}
+
+.marker-container {
+	position: relative;
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background-color: #ff385c;
+	cursor: pointer;
+	perspective: 1000px; /* Required for 3D effect */
+}
+
+/* Faint circle */
+.marker-circle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100px; /* Adjust the size of the circle */
+	height: 100px;
+	border-radius: 50%;
+	background-color: rgba(255, 0, 0, 0.138); /* Faint red color */
+	pointer-events: none; /* Ensures it doesn’t block clicks */
+	z-index: 0; /* Keeps the circle behind the marker */
+}
+
+.marker-side {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden; /* Hides back side when not visible */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth and slower animation */
+}
+
+.front {
+	z-index: 2;
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+.back svg {
+	font-weight: 800;
+}
+
+.marker-container:hover .front {
+	transform: rotateY(180deg); /* Flips front out of view */
+}
+
+.marker-container:hover .back {
+	transform: rotateY(0deg); /* Flips back into view */
+}
+.marker-side svg {
+	width: 22px;
+	height: 22px;
+	color: white;
+	fill: white; /* Ensures consistent color contrast */
+}
