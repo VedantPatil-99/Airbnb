@@ -23,7 +23,7 @@ nav {
 }
 
 .nav-link:hover {
-	background-color: #f0f0f0; /*  #f8f9fa #e9ecef */
+	background-color: #dddddd; /*  #f8f9fa #e9ecef */
 }
 
 .fa-sm,
@@ -44,6 +44,7 @@ nav {
 
 .nav-ends {
 	font-size: 1rem;
+	font-weight: 500 !important;
 }
 
 .nav-link.dropdown-toggle::after {
@@ -52,6 +53,28 @@ nav {
 
 .nav-link.active {
 	font-weight: 600 !important;
+}
+
+.btn-group .btn:hover {
+	background-color: #dddddd;
+	font-size: initial;
+}
+
+.btn-outline-secondary {
+	border: none;
+}
+
+.search-title {
+	font-size: 0.82rem;
+	font-weight: 500;
+}
+
+.search-content {
+	display: flex;
+	justify-content: start;
+	flex-direction: column;
+	width: auto;
+	text-align: start;
 }
 
 /* CARDS - listings/index.js */
