@@ -77,6 +77,10 @@ nav {
 	text-align: start;
 }
 
+.dropdown-menu {
+	min-width: 15rem;
+}
+
 /* CARDS - listings/index.js */
 
 .card {

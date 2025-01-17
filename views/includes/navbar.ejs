@@ -67,7 +67,9 @@
 
 			<ul class="navbar-nav mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link fw-medium px-3 rounded-pill nav-ends" href="#"
+					<a
+						class="nav-link fw-medium px-3 rounded-pill nav-ends"
+						href="/listings/new"
 						>Airbnb your home</a
 					>
 				</li>
@@ -78,7 +80,7 @@
 				</li>
 				<li class="nav-item dropdown">
 					<button
-						class="nav-link dropdown-toggle rounded-pill border border-secondary-subtle nav-ends d-flex flex-row px-3"
+						class="nav-link dropdown-toggle rounded-pill border border-secondary-subtle nav-ends d-flex flex-row px-3 mb-2"
 						href="#"
 						role="button"
 						data-bs-toggle="dropdown"
@@ -104,10 +106,28 @@
 						</svg>
 					</button>
 					<ul class="dropdown-menu dropdown-menu-end">
-						<li><a class="dropdown-item" href="#">Action</a></li>
-						<li><a class="dropdown-item" href="#">Another action</a></li>
-						<li><hr class="dropdown-divider" /></li>
-						<li><a class="dropdown-item" href="#">Something else here</a></li>
+						<% if (!currUser) { %>
+						<li>
+							<a class="dropdown-item fw-medium mb-3" href="/login">Log in</a>
+						</li>
+						<li><a class="dropdown-item mb-3" href="/signup">Sign up</a></li>
+						<% } %> <% if (currUser) { %>
+						<li>
+							<a class="dropdown-item mb-3 text-danger fw-medium" href="#"
+								>Log out</a
+							>
+						</li>
+						<% } %>
+						<li><hr class="dropdown-divider mb-3" /></li>
+						<li>
+							<a class="dropdown-item mb-3" href="/listings/new"
+								>Airbnb your home</a
+							>
+						</li>
+						<li>
+							<a class="dropdown-item mb-3" href="#">Host an experience</a>
+						</li>
+						<li><a class="dropdown-item mb-3" href="#">Help Centre</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -116,3 +136,13 @@
 </nav>
 
 <%- include('../includes/searchBar.ejs') %>
+
+<!-- Airbnb your home
+
+
+Log in
+Sign up
+Airbnb your home
+Host an experience
+Help Centre
+ -->
