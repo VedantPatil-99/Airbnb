@@ -55,6 +55,17 @@ nav {
 	font-weight: 600 !important;
 }
 
+/* Search Bar */
+
+.search-bar {
+	transform: translateY(0);
+	transition: transform 0.3s ease-in-out;
+}
+
+.search-bar.scrolled {
+	transform: translateY(-200%);
+}
+
 .btn-group .btn:hover {
 	background-color: #dddddd;
 	font-size: initial;
@@ -102,8 +113,9 @@ nav {
 
 .card .card-img-top {
 	border-radius: 0.8rem;
-	height: 17.8rem;
+	height: 19rem;
 	object-fit: cover;
+	vertical-align: middle;
 }
 
 .card-body {
