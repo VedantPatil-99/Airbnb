@@ -60,6 +60,10 @@ nav {
 	font-size: initial;
 }
 
+.search-icon:hover {
+	background-color: #ff385c !important;
+}
+
 .btn-outline-secondary {
 	border: none;
 }
