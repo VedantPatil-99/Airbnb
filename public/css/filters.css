@@ -1,6 +1,7 @@
 .slider-container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	position: relative;
 
 	/* background-color: black; */
@@ -25,15 +26,14 @@
 }
 
 .prev-btn {
-	left: -20px;
+	left: -0px;
 }
 
 .next-btn {
-	right: -20px;
+	right: -0px;
 }
 
 .slider-wrapper {
-	mask-image: radial-gradient(circle, black 10%, black 75%, transparent);
 	overflow: hidden;
 	/* width: max-content; Adjust width as needed */
 	margin: 0 10px;
@@ -56,7 +56,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin: 0 8px;
-	opacity: 0.5;
+	opacity: 0.6;
 	transform: scale(1); /* Default scale */
 	transition: transform 0.1s ease, opacity 0.1s ease-in-out;
 
@@ -94,3 +94,26 @@
 	opacity: 0.5;
 	cursor: not-allowed;
 }
+
+.form-check-reverse label,
+.filter-btn span {
+	font-size: 0.8rem;
+	font-weight: 600;
+} /* 
+.fade-fil {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50px;
+	background: linear-gradient(
+		to right,
+		rgba(26, 24, 24, 0.905),
+		rgba(255, 255, 255, 0.958),
+		transparent
+	);
+}
+
+.fade-right {
+	right: 0;
+	transform: rotateY(180deg);
+} */
