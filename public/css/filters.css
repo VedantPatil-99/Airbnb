@@ -48,22 +48,28 @@
 }
 
 .slider-item {
-	height: 3.3rem;
+	padding-bottom: 3rem;
+	height: 3.5rem;
 	width: auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0 10px;
+	margin: 0 8px;
 	opacity: 0.5;
 	transform: scale(1); /* Default scale */
 	transition: transform 0.1s ease, opacity 0.1s ease-in-out;
 
-	&:hover {
+	&:hover,
+	&.active {
 		scale: 1.01;
 		opacity: 0.9;
 		font-weight: 300;
 	}
+}
+
+.slider .nav-link:hover {
+	background-color: #fff;
 }
 
 .slider-item img {
