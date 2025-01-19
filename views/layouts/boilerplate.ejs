@@ -24,6 +24,10 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -39,13 +43,15 @@
 		<link rel="stylesheet" href="/css/style.css" />
 		<link rel="stylesheet" href="/css/rating.css" />
 		<link rel="stylesheet" href="/css/map.css" />
+		<link rel="stylesheet" href="/css/filters.css" />
 	</head>
 	<body class="bg-light">
 		<div class="fixed-top"><%- include('../includes/navbar.ejs') %></div>
+		<div class="container-fluid"><%- include("../includes/filters.ejs") %></div>
 
 		<div class="container-fluid" style="flex: 1"><%- body %></div>
 		<div class="invisible mt-4">Spacing</div>
-		<div class="container-fluid fixed-bottom">
+		<div class="container-fluid">
 			<%- include('../includes/flash.ejs') %> <%-
 			include('../includes/footer.ejs') %>
 		</div>
@@ -57,5 +63,6 @@
 		></script>
 
 		<script src="../js/script.js"></script>
+		<script src="../js/filters.js"></script>
 	</body>
 </html>
