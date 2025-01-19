@@ -6,4 +6,4 @@ This is the Airbnb Web App Clone
 
 This screenshot is after 60% completion.
 
-[Airbnb first look](public/icon/Airbnb_firstlook.png)
+![Airbnb first look](public/icon/Airbnb_firstlook.png)
