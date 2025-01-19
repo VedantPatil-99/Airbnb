@@ -99,7 +99,13 @@
 .filter-btn span {
 	font-size: 0.8rem;
 	font-weight: 600;
-} /* 
+}
+
+.form-check-input {
+	height: 1.3rem;
+}
+
+/* 
 .fade-fil {
 	position: absolute;
 	top: 0;

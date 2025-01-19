@@ -32,9 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const navbar = document.querySelector(".navbar");
 const searchBar = document.querySelector(".search-bar");
-document.body.style.paddingTop = `${
-	navbar.offsetHeight + searchBar.offsetHeight
-}px`;
+document.body.style.paddingTop = `${navbar.offsetHeight + 3}px`;
 
 window.addEventListener("scroll", () => {
 	if (window.scrollY > 50) {
