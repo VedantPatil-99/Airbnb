@@ -1,6 +1,8 @@
 <% layout("/layouts/boilerplate.ejs") %> <%-
-include('../includes/searchBar.ejs') %> <%- include("../includes/filters.ejs")
-%>
+include('../includes/searchBar.ejs') %>
+<div class="m-0 filters-bar py-3 shadow-sm">
+	<%- include("../includes/filters.ejs") %>
+</div>
 <div
 	class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1"
 >
