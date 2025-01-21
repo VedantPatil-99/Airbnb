@@ -1,3 +1,10 @@
+.filters-bar {
+	position: sticky;
+	top: 80px;
+	z-index: 7;
+	background-color: rgb(248, 249, 250);
+}
+
 .slider-container {
 	display: flex;
 	align-items: center;
