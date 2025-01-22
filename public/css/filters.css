@@ -143,6 +143,10 @@
 	background-color: #1a1919;
 }
 
+.price-tax {
+	display: none;
+}
+
 /* 
 .fade-fil {
 	position: absolute;

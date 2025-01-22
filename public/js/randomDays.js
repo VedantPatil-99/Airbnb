@@ -26,9 +26,11 @@ function getRandomDateRange() {
 	// Generate a random number for km between 15 and 600
 	const km = Math.floor(Math.random() * (600 - 15 + 1)) + 15;
 
+	const nights = validEndDay - startDay;
 	return {
 		dateRange: `${startDay}-${validEndDay} ${month}`,
 		km: km,
+		nights: nights,
 	};
 }
 
@@ -36,11 +38,14 @@ function getRandomDateRange() {
 document.addEventListener("DOMContentLoaded", function () {
 	const dateElements = document.querySelectorAll(".random-date");
 	const kmElem = document.querySelectorAll(".random-km");
-
+	const nights = document.querySelectorAll(".nights");
+	console.log(dateElements);
 	dateElements.forEach((element, index) => {
 		const result = getRandomDateRange();
 		element.textContent = result.dateRange;
 
+		nights[index].textContent = `${result.nights} nights`;
+		console.log(kmElem);
 		// Update km in the corresponding element
 		if (kmElem[index]) {
 			kmElem[index].textContent = `${result.km}  kilometers away`;

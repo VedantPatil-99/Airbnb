@@ -42,3 +42,16 @@ prevButton.addEventListener("click", () => {
 
 // Initialize the slider
 updateSliderPosition();
+
+const taxSwitches = document.querySelectorAll("#taxes");
+const price = document.querySelector(".price");
+const priceTax = document.querySelector(".price-tax");
+for (taxSwitche of taxSwitches) {
+	taxSwitch.addEventListener("change", () => {
+		if (taxSwitch.checked) {
+			price.style.display = "none";
+		} else {
+			priceTax.style.display = "block";
+		}
+	});
+}
