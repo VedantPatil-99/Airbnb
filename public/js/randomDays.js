@@ -38,17 +38,45 @@ function getRandomDateRange() {
 document.addEventListener("DOMContentLoaded", function () {
 	const dateElements = document.querySelectorAll(".random-date");
 	const kmElem = document.querySelectorAll(".random-km");
-	const nights = document.querySelectorAll(".nights");
-	console.log(dateElements);
-	dateElements.forEach((element, index) => {
+	const nightsElems = document.querySelectorAll(".nights");
+	dateElements.forEach((ele, idx) => {
 		const result = getRandomDateRange();
-		element.textContent = result.dateRange;
-
-		nights[index].textContent = `${result.nights} nights`;
-		console.log(kmElem);
+		ele.textContent = result.dateRange;
+		nightsElems[idx].textContent = `${result.nights} nights · `;
 		// Update km in the corresponding element
-		if (kmElem[index]) {
-			kmElem[index].textContent = `${result.km}  kilometers away`;
+		if (kmElem[idx]) {
+			kmElem[idx].textContent = `${result.km}  kilometers away`;
 		}
 	});
+});
+
+const priceTaxes = document.querySelectorAll(".priceNtax");
+
+document.addEventListener("DOMContentLoaded", function () {
+	priceTaxes.forEach((ele, idx) => {
+		const result = getRandomDateRange();
+		// console.log(ele.textContent, idx);
+
+		let oldPrice = Number(ele.textContent);
+		// console.log(typeof oldPrice);
+
+		let newPrice = oldPrice * result.nights;
+		// console.log(`new ${newPrice}`);
+
+		ele.textContent = newPrice.toLocaleString("en-IN");
+	});
+
+	// tax
+
+	// oldPrice = Number(priceTaxes[index].textContent);
+	// console.log(priceTaxes);
+	// for (let i of priceTaxes[index]) {
+	// 	console.log(i);
+	// }
+	// let totalNights = Number(result.nights);
+	// let newPrices = (oldPrice * totalNights).toLocaleString("en-IN");
+	// console.log(typeof newPrices);
+	// for (const newPrice of newPrices) {
+	// 	priceTaxes[index].textContent = newPrice;
+	// }
 });

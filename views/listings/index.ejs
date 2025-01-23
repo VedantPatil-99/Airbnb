@@ -22,16 +22,26 @@ include('../includes/searchBar.ejs') %>
 					><br />
 					<span class="card-text"
 						><span class="random-km text-muted"> Loading km...</span><br />
-						<span class="nights text-muted">Loading</span
-						><span class="dot px-1">·</span>
+						<span class="nights text-muted toHide">Loading</span>
+						<!-- <span class="dot px-1"></span> -->
 						<span class="random-date text-muted"> Loading date...</span>
 					</span>
 				</p>
-				<p class="price pt-2">
-					&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %><span>
-						night</span
-					>
+				<% let price = listing.price %>
+				<p class="oldPrice pt-2">
+					<b>&#8377;</b>&nbsp;<span class="price"><%= price %></span>
+					<span> night</span>
 				</p>
+
+				<p class="text-decoration-underline pt-2 newPrice toHide">
+					<b>&#8377;</b>&nbsp;<span class="priceNtax toHide"><%= price %></span>
+					<span>total before taxes</span>
+				</p>
+				<!-- <p class="price priceNtax pt-2 text-decoration-underline">
+					&#8377;&nbsp;<%# (listing.price).toLocaleString("en-IN") %><span>
+						total before taxes</span
+					>
+				</p> -->
 			</div>
 		</div>
 	</a>
