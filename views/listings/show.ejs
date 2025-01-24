@@ -20,10 +20,23 @@
 				<p class="card-text fw-medium">
 					Owned by: <i><%= listing.owner.username %></i>
 				</p>
-				<h5 class="card-title"><%= listing.title %></h5>
-				<p class="card-text fw-medium"><%= listing.description %></p>
+				<h4 class="card-title m-0 pb-1">
+					Room in <%= listing.location %>, <%= listing.country %>
+				</h4>
+				<h6 class="main-amenities">
+					<span class="capacity">5 </span> guests ·
+					<span class="bedrooms">5 </span> bedrooms ·
+					<span class="beds">5 </span> beds ·
+					<span class="bathrooms">5 </span> bathrooms
+				</h6>
+				<div class="reviews-overview">
+					<b><i class="fa-solid fa-star"></i> 4.95 </b> <b class="dot">· </b>
+					<b class="total-reviews text-decoration-underline">20 reviews</b>
+				</div>
+				<!-- <p class="card-text fw-medium"><%= listing.description %></p>
 				<p class="card-text fw-medium"><%= listing.location %></p>
-				<span class="card-text fw-medium"><%= listing.country %></span>
+				<span class="card-text fw-medium"><%= listing.country %></span> -->
+
 				<p class="price pt-2">
 					&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %><span>
 						night</span
