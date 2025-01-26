@@ -137,6 +137,10 @@ nav {
 	font-weight: 700;
 }
 
+.show-img {
+	height: 22rem !important;
+}
+
 /* FOOTER - includes/footer.ejs */
 
 footer {
@@ -161,8 +165,4 @@ footer .f-info-p1 ul li {
 
 .f-info-toggle span {
 	font-weight: 600;
-}
-
-.show-img {
-	height: 22rem;
 }

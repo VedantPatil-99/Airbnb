@@ -4,10 +4,8 @@
 	let listing = <%- JSON.stringify(listing) %>;
 </script>
 
-<div
-	class="row col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 offset-0"
->
-	<div class="col">
+<div class="container">
+	<div class="row">
 		<h3 class="my-4 card-title"><%= listing.title %></h3>
 		<div class="card bg-light">
 			<img
@@ -16,47 +14,7 @@
 				alt="Main_image"
 			/>
 
-			<div class="card-body h-auto">
-				<p class="card-text fw-medium">
-					Owned by: <i><%= listing.owner.username %></i>
-				</p>
-				<h4 class="card-title m-0 pb-1">
-					Room in <%= listing.location %>, <%= listing.country %>
-				</h4>
-				<h6 class="main-amenities">
-					<span class="capacity">5 </span> guests ·
-					<span class="bedrooms">5 </span> bedrooms ·
-					<span class="beds">5 </span> beds ·
-					<span class="bathrooms">5 </span> bathrooms
-				</h6>
-				<div class="reviews-overview">
-					<b><i class="fa-solid fa-star"></i> 4.95 </b> <b class="dot">· </b>
-					<b class="total-reviews text-decoration-underline">20 reviews</b>
-				</div>
-				<!-- <p class="card-text fw-medium"><%= listing.description %></p>
-				<p class="card-text fw-medium"><%= listing.location %></p>
-				<span class="card-text fw-medium"><%= listing.country %></span> -->
-
-				<p class="price pt-2">
-					&#8377;&nbsp;<%= listing.price.toLocaleString("en-IN") %><span>
-						night</span
-					>
-				</p>
-
-				<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
-				<div class="btns d-flex mt-4">
-					<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark"
-						>Edit</a
-					>
-					<form
-						action="/listings/<%= listing._id %>?_method=DELETE"
-						method="post"
-					>
-						<button class="btn btn-danger offset-3">Delete</button>
-					</form>
-				</div>
-				<% } %>
-			</div>
+			<%- include("../includes/showDetails.ejs") %>
 		</div>
 
 		<% if (currUser) { %>
