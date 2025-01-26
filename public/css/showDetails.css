@@ -1,0 +1,15 @@
+.host-overview-dp {
+	height: 3rem;
+	width: 3rem;
+	object-fit: cover;
+}
+
+.host-name {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.host-expnc {
+	font-size: 0.9rem;
+	font-weight: 500;
+}
