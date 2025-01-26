@@ -1,15 +1,30 @@
 .host-overview-dp {
-	height: 3rem;
-	width: 3rem;
+	height: 2.8rem;
+	width: 2.8rem;
 	object-fit: cover;
 }
 
-.host-name {
+.host-name,
+.head-amnt-info {
 	font-size: 1.1rem;
 	font-weight: 600;
 }
 
-.host-expnc {
+.host-expnc,
+.sub-amnt-info {
 	font-size: 0.9rem;
 	font-weight: 500;
+}
+
+.py-4 {
+	padding: 32px 0 !important;
+}
+
+.amnt-svg {
+	-webkit-box-pack: center;
+	flex-shrink: 0;
+	width: 40px;
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
 }

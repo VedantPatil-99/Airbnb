@@ -31,6 +31,36 @@
 			</div>
 		</div>
 
+		<div class="main-amenities py-4 d-flex flex-column gap-4 border-bottom">
+			<div class="first-amnt d-flex gap-4">
+				<div class="firepit amnt-svg"></div>
+				<div class="amnt-info">
+					<p class="head-amnt-info m-0">Outdoor entertainment</p>
+					<p class="sub-amnt-info m-0 text-secondary">
+						The firepit, alfresco dining, BBQ area and outdoor seating are great
+						for summer trips
+					</p>
+				</div>
+			</div>
+			<div class="second-amnt d-flex gap-4">
+				<div class="locMarker amnt-svg"></div>
+				<div class="amnt-info">
+					<p class="head-amnt-info m-0">Peace and quiet</p>
+					<p class="sub-amnt-info m-0 text-secondary">
+						Guests say this home is in a quiet area.
+					</p>
+				</div>
+			</div>
+			<div class="third-amnt d-flex gap-4">
+				<div class="calendar amnt-svg"></div>
+				<div class="amnt-info">
+					<p class="head-amnt-info m-0">Free cancellation before 30 Jun</p>
+					<p class="sub-amnt-info m-0 text-secondary">
+						Get a full refund if you change your mind.
+					</p>
+				</div>
+			</div>
+		</div>
 		<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
 		<div class="btns d-flex mt-4">
 			<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark">Edit</a>
@@ -48,6 +78,7 @@
 		</p>
 	</div>
 </div>
+<script src="../js/amenities.js"></script>
 <!-- <p class="card-text fw-medium"><%= listing.description %></p>
 				<p class="card-text fw-medium"><%= listing.location %></p>
 				<span class="card-text fw-medium"><%= listing.country %></span> -->

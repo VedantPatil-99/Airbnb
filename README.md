@@ -8,7 +8,7 @@ This screenshot is after 60% completion.
 
 ![Airbnb first look](public/icon/Airbnb_firstlook.png)
 
-# Web Application Architecture
+## Web Application Architecture
 
 ```mermaid
 flowchart TB
