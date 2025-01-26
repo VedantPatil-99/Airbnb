@@ -61,6 +61,34 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="show-desc py-4">
+			<p class="s-desc">
+				The treehouse is nestled in the Himalayan subtropical pine forests. It
+				is made keeping in mind to provide a comfortable and memorable stay to
+				travelers seeking a break from the hustle of city life. <br />
+				The house is cozy both in winter and summer. It has a 360-degree view of
+				the greater Himalayas The treehouse is nestled in the Himalayan
+				subtropical pine forests. It is made keeping in mind to provide a
+				comfortable and memorable stay to travelers seeking a break from the
+				hustle of city life. The house is cozy both in winter and summer. It has
+				a 360-degree view of the greater Himalayas The treehouse is nestled in
+				the Himalayan subtropical pine forests. It is made keeping in mind to
+				provide a comfortable and memorable stay to travelers seeking a break
+				from the hustle of city life. The house is cozy both in winter and
+				summer. It has a 360-degree view of the greater Himalayas
+			</p>
+			<a
+				class="icon-link link-underline-dark"
+				href="#description-modal"
+				data-bs-toggle="modal"
+				data-bs-target="#description-modal"
+			>
+				<span class="show-f-desc">Show more</span>
+				<span><i class="fa-solid fa-chevron-right"></i></span>
+			</a>
+		</div>
+
 		<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
 		<div class="btns d-flex mt-4">
 			<a href="/listings/<%= listing._id %>/edit" class="btn btn-dark">Edit</a>
@@ -78,6 +106,7 @@
 		</p>
 	</div>
 </div>
+<%- include("../includes/modalBox/showDescM.ejs") %>
 <script src="../js/amenities.js"></script>
 <!-- <p class="card-text fw-medium"><%= listing.description %></p>
 				<p class="card-text fw-medium"><%= listing.location %></p>

@@ -5,7 +5,8 @@
 }
 
 .host-name,
-.head-amnt-info {
+.head-amnt-info,
+.show-f-desc {
 	font-size: 1.1rem;
 	font-weight: 600;
 }
@@ -27,4 +28,28 @@
 	display: flex;
 	justify-content: center;
 	padding-top: 5px;
+}
+
+.s-desc {
+	font-size: 1.1rem;
+	font-weight: 460;
+}
+
+.s-desc p {
+	font-size: 1rem;
+	font-weight: 450;
+}
+
+.s-desc-close-btn {
+	opacity: 1;
+	background: transparent var(--bs-btn-close-bg) center / 0.7rem auto no-repeat;
+}
+
+.show-desc p {
+	/* width: 400px; */
+	display: -webkit-box;
+	line-clamp: 6;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
 }
