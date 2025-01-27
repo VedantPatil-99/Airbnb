@@ -15,7 +15,15 @@
 	<div class="f-info-p2 d-flex justify-content-between col-3">
 		<div class="f-info-toggle d-flex justify-content-end">
 			<span><i class="fa-solid fa-globe"></i> &nbsp;English (IN)</span>
-			<span class="ms-3">₹ INR</span>
+			<a
+				class="icon-link"
+				href="#currency-modal"
+				data-bs-toggle="modal"
+				data-bs-target="#currency-modal"
+			>
+				<span class="currency">₹ INR</span>
+			</a>
+			<span class="ms-3"></span>
 		</div>
 		<div class="f-info-socials col-md-4 justify-content-end d-flex">
 			<a href="https://www.facebook.com/AirbnbIndia "
@@ -30,3 +38,4 @@
 		</div>
 	</div>
 </footer>
+<%- include("../includes/modalBox/currencyM.ejs") %>
