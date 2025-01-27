@@ -53,3 +53,7 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
+.s-title {
+	font-weight: 550;
+}

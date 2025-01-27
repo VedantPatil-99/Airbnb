@@ -47,7 +47,7 @@ async function main() {
 }
 
 app.get("/", (req, res) => {
-	res.send("Hi, I'm root.");
+	res.redirect("/listings");
 });
 
 const sessionOptions = {
