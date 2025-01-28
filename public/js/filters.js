@@ -55,7 +55,7 @@ const nightsElems = document.querySelectorAll(".nights");
 everyPrice.forEach((ele, idx) => {
 	let numPrice = Number(ele.textContent);
 	ele.textContent = numPrice.toLocaleString("en-IN");
-	console.log(ele);
+	// console.log(ele);
 });
 taxSwitch.addEventListener("change", () => {
 	if (taxSwitch.checked) {
@@ -70,7 +70,7 @@ taxSwitch.addEventListener("change", () => {
 		// console.log(everyTax);
 		// console.log(everyPrice);
 	} else {
-		console.log("changed");
+		// console.log("changed");
 		everyPrice.forEach((ele, idx) => {
 			ele.classList.remove("toHide");
 			oldPrice[idx].classList.remove("toHide");

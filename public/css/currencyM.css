@@ -1,0 +1,8 @@
+.curnc-list li {
+	padding: 0.5rem;
+}
+
+.curnc-list li button {
+	width: 100%;
+	color: black;
+}
