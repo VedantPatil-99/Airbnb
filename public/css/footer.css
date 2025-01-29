@@ -1,0 +1,26 @@
+/* FOOTER - includes/footer.ejs */
+
+footer {
+        font-size: 0.9rem;
+}
+
+footer a,
+span {
+        text-decoration: none;
+        color: black;
+}
+
+footer a:hover,
+.f-info-toggle div:hover {
+        text-decoration: underline;
+        color: black;
+}
+
+footer .f-info-p1 ul li {
+        padding-left: 0.8rem;
+}
+
+.f-info-toggle div,
+.f-info-toggle span {
+        font-weight: 600;
+}
