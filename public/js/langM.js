@@ -90,3 +90,42 @@ const languages = [
 	{ language: "繁體中文", country: "香港" },
 	{ language: "繁體中文", country: "台灣" },
 ];
+
+// Function to dynamically generate the language list
+function genLangList() {
+	const langListEle = document.querySelector("ul.lang-list");
+
+	if (!langListEle) {
+		console.error(
+			"The element with class 'lang-list' was not found in the DOM.",
+		);
+		return;
+	}
+
+	langListEle.innerHTML = ""; // Clear any existing content
+
+	languages.forEach(({ language, country }) => {
+		const listItem = document.createElement("li");
+		listItem.className = "col-2  text-black";
+
+		listItem.innerHTML = `
+      <button class="btn btn-outline-light py-2 px-3 d-flex flex-column justify-content-start">
+        <div class="lang">${language}</div>
+        <div class="lang-country text-secondary">${country}</div>
+      </button>
+    `;
+
+		listItem.querySelector("button").addEventListener("click", function () {
+			document
+				.querySelectorAll(".lang-list button")
+				.forEach((btn) =>
+					btn.classList.remove(...["border", "border-1", "border-dark"]),
+				);
+			this.classList.add(...["border", "border-1", "border-dark"]);
+		});
+
+		langListEle.appendChild(listItem);
+	});
+}
+
+genLangList();

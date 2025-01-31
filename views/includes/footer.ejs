@@ -14,7 +14,7 @@
 	</div>
 	<div class="f-info-p2 d-flex justify-content-end col-4">
 		<div class="f-info-toggle d-flex justify-content-center align-items-center">
-			<div class="me-4">
+			<div class="me-4" data-bs-toggle="modal" data-bs-target="#language-modal">
 				<i class="fa-solid fa-globe me-2"></i> &nbsp;English (IN)
 			</div>
 			<a
@@ -40,4 +40,8 @@
 		</div>
 	</div>
 </footer>
+
+<!-- Currency modal -->
 <%- include("../includes/modalBox/currencyM.ejs") %>
+<!-- Language modal -->
+<%- include("../includes/modalBox/langM.ejs") %>

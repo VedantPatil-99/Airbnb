@@ -1,0 +1,10 @@
+.curnc-list li,
+.lang-list li {
+	padding: 0.5rem;
+}
+
+.curnc-list li button,
+.lang-list li button {
+	width: 100%;
+	color: black;
+}
