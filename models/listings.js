@@ -36,6 +36,7 @@ const listingSchema = new Schema({
 			required: true,
 		},
 	},
+	amenities: [{ type: String }],
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
