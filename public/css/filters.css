@@ -63,20 +63,20 @@
 	align-items: center;
 	justify-content: space-between;
 	margin: 0 6px;
-	opacity: 0.6;
+	opacity: 0.65;
 	transform: scale(1); /* Default scale */
-	transition: transform 0.1s ease, opacity 0.1s ease-in-out;
+	transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
 
 	&:hover,
 	&.active {
-		scale: 1.01;
+		scale: 0.999999;
 		opacity: 0.9;
 		font-weight: 300;
 	}
 }
 
 .slider .nav-link:hover {
-	background-color: #fff;
+	background-color: #f8f9fa;
 }
 
 .slider-item img {
@@ -88,12 +88,13 @@
 }
 
 .slider-item span {
-	font-size: 13px;
+	font-size: 11.5px;
 	color: #333;
 	min-width: max-content;
 	width: 4rem;
 	text-align: center;
 	font-weight: 600;
+	padding-top: 6px;
 }
 
 .prev-btn:disabled,
