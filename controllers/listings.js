@@ -24,6 +24,50 @@ module.exports.showListings = async (req, res) => {
 	res.render("./listings/show.ejs", { listing });
 };
 
+// module.exports.createListing = async (req, res) => {
+// 	try {
+// 		console.log("Received Form Data:", req.body); // Log incoming data
+
+// 		// Geocode the location using Mapbox
+// 		let response = await geocodingClient
+// 			.forwardGeocode({
+// 				query: req.body.listing.location,
+// 				limit: 1,
+// 			})
+// 			.send();
+
+// 		// Extract image details
+// 		let filename = req.file ? req.file.filename : null;
+// 		let url = req.file ? req.file.path : null;
+
+// 		// Create a new listing
+// 		let newListing = new Listing(req.body.listing);
+// 		newListing.owner = req.user._id;
+// 		newListing.image = filename && url ? { filename, url } : null;
+// 		newListing.geometry = response.body.features[0].geometry;
+
+// 		// // Handle amenities selection
+// 		// if (req.body.amenities) {
+// 		// 	newListing.amenities = Array.isArray(req.body.amenities)
+// 		// 		c? req.body.amenities
+// 		// 		: [req.body.amenities]; // Convert single selection to array
+// 		// } else {
+// 		// 	newListing.amenities = []; // Default to empty array
+// 		// }
+
+// 		// Save to the database
+// 		let savedListing = await newListing.save();
+// 		console.log("Saved Listing:", savedListing); // Log saved listing
+
+// 		req.flash("success", "New listing added successfully!");
+// 		res.redirect("/listings");
+// 	} catch (error) {
+// 		console.error("Error creating listing:", error);
+// 		req.flash("error", "Something went wrong!");
+// 		res.redirect("/listings/new");
+// 	}
+// };
+
 module.exports.createListing = async (req, res) => {
 	let response = await geocodingClient
 		.forwardGeocode({
@@ -39,8 +83,22 @@ module.exports.createListing = async (req, res) => {
 	newListing.image = { filename, url };
 	newListing.geometry = response.body.features[0].geometry;
 
+	// Handle amenities selection
+	// try {
+	// 	if (req.body.amenities) {
+	// 		newListing.amenities = Array.isArray(req.body.amenities)
+	// 			? req.body.amenities
+	// 			: [req.body.amenities]; // Convert to array if only one is selected
+	// 		console.log(newListing.amenities);
+	// 	} else {
+	// 		newListing.amenities = []; // Default to empty array if none selected
+	// 	}
+	// } catch (err) {
+	// 	console.log(err);
+	// }
+
 	let savedListing = await newListing.save();
-	// console.log(savedListing);
+	console.log(savedListing);
 	req.flash("success", "New listing added successfully!");
 	res.redirect("/listings");
 };

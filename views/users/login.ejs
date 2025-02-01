@@ -1,22 +1,23 @@
 <% layout("/layouts/boilerplate") %>
 
-<div class="invisible">Spacing</div>
-<div class="row col-lg-8 col-md-10 offset-md-1 offset-lg-2">
-	<h4>login</h4>
+<div class="invisible" style="height: 20vh">Spacing</div>
+<div class="row col-lg-4 col-md-8 col-sm-8 offset-lg-4 offset-md-2 offset-sm-2">
+	<h4 class="mb-5">Log in</h4>
 	<form action="/login" method="POST" class="needs-validation" novalidate>
-		<div class="mb-3">
+		<div class="mb-4">
 			<label for="username" class="form-label">Username: </label>
 			<input
 				type="text"
 				name="username"
 				id="username"
 				class="form-control"
+				autocomplete="off"
 				required
 			/>
 			<div class="valid-feedback">Looks good!</div>
 		</div>
 
-		<div class="mb-3">
+		<div class="mb-4">
 			<label for="password" class="form-label">Password: </label>
 			<input
 				type="password"
