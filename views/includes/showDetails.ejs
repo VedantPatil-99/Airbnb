@@ -88,15 +88,15 @@
 				<span><i class="fa-solid fa-chevron-right"></i></span>
 			</a>
 		</div>
-		<!-- 
+		
 		<div class="place-offers py-4">
 			<h4 class="pb-2 s-title">What this place offers</h4>
 			<ul>
-				<%# listing.amenities.forEach(amenity => { %>
-				<li><%# amenity %></li>
-				<%# }); %>
+				<% listing.amenities.forEach(amenity => { %>
+				<li><%= amenity %></li>
+				<% }); %>
 			</ul>
-		</div> -->
+		</div>
 
 		<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
 		<div class="btns d-flex mt-4">

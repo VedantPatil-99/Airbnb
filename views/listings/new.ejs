@@ -89,34 +89,34 @@
 			<div class="invalid-feedback">Please provide a valid location.</div>
 		</div>
 
-		<!-- <label class="form-label">Select Amenities:</label>
-		<%# const amenitiesList = ["Scenic views", "Sea view", "Ocean view",
+		<label class="form-label">Select Amenities:</label>
+		<% const amenitiesList = ["Scenic views", "Sea view", "Ocean view",
 		"Housekeeping", "Kitchen", "Wifi", "Washing machine", "Dryer",
 		"Air-conditioning", "Cooking basics", "Dishes and cutlery", "Iron",
-		"Ironing-board"]; %> -->
+		"Ironing-board"]; %>
 
-		<!-- <ul
+		<ul
 			class="list-unstyled d-flex flex-row justify-content-start align-items-center flex-wrap"
 		>
-			<%# amenitiesList.forEach((amenity, idx) => { %>
+			<% amenitiesList.forEach((amenity, idx) => { %>
 			<li class="amenity px-2">
 				<input
 					type="checkbox"
 					class="btn-check"
-					id="amenity-<%#idx %>"
-					name="amenities"
-					value="<%#amenity %>"
+					id="amenity-<%= idx %>"
+					name="listing[amenities]"
+					value="<%= amenity %>"
 					autocomplete="off"
 				/>
 				<label
 					class="btn btn-outline-primary amenities-label"
-					for="amenity-<%# idx %>"
-					><%# amenity %></label
+					for="amenity-<%= idx %>"
+					><%= amenity %></label
 				>
 			</li>
 			<br />
-			<%# }); %>
-		</ul> -->
+			<% }); %>
+		</ul>
 		<button
 			type="submit"
 			class="btn btn-danger col-lg-2 col-md-2 col-sm-3 col-3"
