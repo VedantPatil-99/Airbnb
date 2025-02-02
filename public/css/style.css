@@ -141,3 +141,6 @@ nav {
 	height: 22rem !important;
 }
 
+.btn-check:checked + .btn svg {
+	fill: white !important;
+}

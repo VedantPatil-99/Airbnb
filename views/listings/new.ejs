@@ -104,10 +104,13 @@
 					autocomplete="off"
 				/>
 				<label
-					class="btn btn-outline-primary d-flex align-items-center p-2"
+					class="btn btn-outline-dark d-flex align-items-center p-3"
 					for="<%= amenity.name.replace(/\s+/g, '-') %>"
 				>
-					<%- amenity.icon %> <%= amenity.name %>
+					<span class="me-2 d-flex align-items-center"
+						><%- amenity.icon %></span
+					>
+					<%= amenity.name %>
 				</label>
 			</li>
 			<% }); %>
