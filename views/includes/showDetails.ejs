@@ -91,21 +91,19 @@
 
 		<div class="place-offers py-4">
 			<h4>What this place offers:</h4>
-			<% for (const category in amenities) { %> <% const categoryAmenities =
-			listing.amenities.filter(a => amenities[category].some(am => am.name ===
-			a)); %> <% if (categoryAmenities.length > 0) { %>
-			<h3><%= category %></h3>
 			<ul class="list-unstyled d-flex flex-wrap">
-				<% categoryAmenities.forEach(amenity => { %>
-				<li class="d-flex align-items-center p-2">
-					<span class="me-2">
+				<% for (const category in amenities) { %> <% const categoryAmenities =
+				listing.amenities.filter(a => amenities[category].some(am => am.name ===
+				a)); %> <% if (categoryAmenities.length > 0) { %> <%
+				categoryAmenities.forEach(amenity => { %>
+				<li class="d-flex align-items-center p-2 col-md-6 col-12 my-1">
+					<span class="me-4">
 						<%- amenities[category].find(am => am.name === amenity).icon %>
 					</span>
-					<span><%= amenity %></span>
+					<span class="s-desc"><%= amenity %></span>
 				</li>
-				<% }); %>
+				<% }); %> <% } %> <% } %>
 			</ul>
-			<% } %> <% } %>
 		</div>
 
 		<% if (currUser && currUser._id.equals(listing.owner._id)) { %>
