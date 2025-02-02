@@ -22,7 +22,6 @@ containerMap.appendChild(marker_circle);
 containerMap.appendChild(frontSide);
 containerMap.appendChild(backSide);
 
-console.log(mapToken);
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
 	container: "map", // container ID
