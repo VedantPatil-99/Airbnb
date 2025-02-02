@@ -90,33 +90,30 @@
 		</div>
 
 		<label class="form-label">Select Amenities:</label>
-		<% const amenitiesList = ["Scenic views", "Sea view", "Ocean view",
-		"Housekeeping", "Kitchen", "Wifi", "Washing machine", "Dryer",
-		"Air-conditioning", "Cooking basics", "Dishes and cutlery", "Iron",
-		"Ironing-board"]; %>
-
-		<ul
-			class="list-unstyled d-flex flex-row justify-content-start align-items-center flex-wrap"
-		>
-			<% amenitiesList.forEach((amenity, idx) => { %>
-			<li class="amenity px-2">
+		<% for (const category in amenities) { %>
+		<h6><%= category %></h6>
+		<ul class="list-unstyled d-flex flex-wrap">
+			<% amenities[category].forEach(amenity => { %>
+			<li class="d-flex align-items-center p-2">
 				<input
 					type="checkbox"
 					class="btn-check"
-					id="amenity-<%= idx %>"
+					id="<%= amenity.name.replace(/\s+/g, '-') %>"
 					name="listing[amenities]"
-					value="<%= amenity %>"
+					value="<%= amenity.name %>"
 					autocomplete="off"
 				/>
 				<label
-					class="btn btn-outline-primary amenities-label"
-					for="amenity-<%= idx %>"
-					><%= amenity %></label
+					class="btn btn-outline-primary d-flex align-items-center p-2"
+					for="<%= amenity.name.replace(/\s+/g, '-') %>"
 				>
+					<%- amenity.icon %> <%= amenity.name %>
+				</label>
 			</li>
-			<br />
 			<% }); %>
 		</ul>
+		<% } %>
+
 		<button
 			type="submit"
 			class="btn btn-danger col-lg-2 col-md-2 col-sm-3 col-3"
