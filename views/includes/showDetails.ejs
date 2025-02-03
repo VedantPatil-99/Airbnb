@@ -90,19 +90,42 @@
 		</div>
 
 		<div class="place-offers py-4">
-			<h4>What this place offers:</h4>
-			<ul class="list-unstyled d-flex flex-wrap">
-				<% for (const category in amenities) { %> <% const categoryAmenities =
-				listing.amenities.filter(a => amenities[category].some(am => am.name ===
-				a)); %> <% if (categoryAmenities.length > 0) { %> <%
-				categoryAmenities.forEach(amenity => { %>
+			<h4 class="mb-3">What this place offers:</h4>
+			<ul class="list-unstyled d-flex flex-wrap mb-0">
+				<% let count = 0; %>
+				<!--.-->
+				<% for (const category in amenities) { %>
+				<!--.-->
+				<% const categoryAmenities = listing.amenities.filter(a =>
+				amenities[category].some(am => am.name === a)); %>
+				<!--.-->
+				<% if (categoryAmenities.length > 0) { %>
+				<!--.-->
+				<% categoryAmenities.forEach(amenity => { %>
+				<!--.-->
+				<% if (count < 10) { %>
 				<li class="d-flex align-items-center p-2 col-md-6 col-12 my-1">
 					<span class="me-4">
 						<%- amenities[category].find(am => am.name === amenity).icon %>
 					</span>
 					<span class="s-desc"><%= amenity %></span>
 				</li>
-				<% }); %> <% } %> <% } %>
+				<% } %> <% count++; %>
+				<!-- if -->
+				<% }); %>
+				<!-- categoryAmenities.forEach -->
+				<% } %>
+				<!-- if (categoryAmenities.length > 0) -->
+				<% } %>
+				<!-- for -->
+				<button
+					type="button"
+					class="btn btn-outline-dark mt-4 s-desc col-xl-4 col-sm-6 col-12 p-2 amnt-btn"
+					data-bs-toggle="modal"
+					data-bs-target="#show-amenities-modal"
+				>
+					Show all amenities
+				</button>
 			</ul>
 		</div>
 
@@ -123,8 +146,9 @@
 		</p>
 	</div>
 </div>
+
+<!-- Show description modal -->
 <%- include("../includes/modalBox/showDescM.ejs") %>
+<!-- Show amenities modal -->
+<%- include("../includes/modalBox/showAmenitiesM.ejs") %>
 <script src="../js/amenities.js"></script>
-<!-- <p class="card-text fw-medium"><%= listing.description %></p>
-				<p class="card-text fw-medium"><%= listing.location %></p>
-				<span class="card-text fw-medium"><%= listing.country %></span> -->

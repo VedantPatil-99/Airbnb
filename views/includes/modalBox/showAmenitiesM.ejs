@@ -1,0 +1,56 @@
+<!-- Modal -->
+<div
+	class="modal fade"
+	id="show-amenities-modal"
+	data-bs-keyboard="true"
+	tabindex="-1"
+	aria-labelledby="Amenities Modal"
+	aria-hidden="true"
+>
+	<div
+		class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+	>
+		<div class="modal-content rounded-4">
+			<div class="modal-header border-0 d-block">
+				<button
+					type="button"
+					class="btn-close s-desc-close-btn pt-3 m-0"
+					data-bs-dismiss="modal"
+					aria-label="Close"
+				></button>
+			</div>
+			<div class="modal-body s-desc px-4 pt-0">
+				<h4 class="modal-title mb-3 fw-bold" id="staticBackdropLabel">
+					What this place offers
+				</h4>
+				<section class="all-amenities">
+					<ul class="amnts-list row list-unstyled">
+						<% for (const category in amenities) { %>
+						<!--.-->
+						<% const categoryAmenities = listing.amenities.filter(a =>
+						amenities[category].some(am => am.name === a)); %>
+						<!--.-->
+						<h5 class="s-category"><%= category %></h5>
+						<% if (categoryAmenities.length > 0) { %>
+						<!--.-->
+						<% categoryAmenities.forEach(amenity => { %>
+
+						<li class="d-flex align-items-center p-2 col-md-6 col-12 my-1">
+							<span class="me-4">
+								<%- amenities[category].find(am => am.name === amenity).icon %>
+							</span>
+							<span class="s-desc"><%= amenity %></span>
+						</li>
+
+						<% }); %>
+						<!-- categoryAmenities.forEach -->
+						<% } %>
+						<!-- if (categoryAmenities.length > 0) -->
+						<% } %>
+						<!-- for -->
+					</ul>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
