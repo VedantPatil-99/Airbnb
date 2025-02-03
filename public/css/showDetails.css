@@ -62,3 +62,7 @@
 .amnt-btn {
 	font-weight: 550;
 }
+
+ul.amnts-list > li {
+	padding: 24px 0;
+}

@@ -8,7 +8,7 @@
 	aria-hidden="true"
 >
 	<div
-		class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+		class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
 	>
 		<div class="modal-content rounded-4">
 			<div class="modal-header border-0 d-block">
@@ -24,22 +24,22 @@
 					What this place offers
 				</h4>
 				<section class="all-amenities">
-					<ul class="amnts-list row list-unstyled">
+					<ul class="amnts-list row list-unstyled mx-1">
 						<% for (const category in amenities) { %>
 						<!--.-->
 						<% const categoryAmenities = listing.amenities.filter(a =>
 						amenities[category].some(am => am.name === a)); %>
 						<!--.-->
-						<h5 class="s-category"><%= category %></h5>
+						<h5 class="s-category py-1 px-0 mt-4"><%= category %></h5>
 						<% if (categoryAmenities.length > 0) { %>
 						<!--.-->
 						<% categoryAmenities.forEach(amenity => { %>
 
-						<li class="d-flex align-items-center p-2 col-md-6 col-12 my-1">
-							<span class="me-4">
+						<li class="d-flex align-items-center border-bottom">
+							<div class="me-4">
 								<%- amenities[category].find(am => am.name === amenity).icon %>
-							</span>
-							<span class="s-desc"><%= amenity %></span>
+							</div>
+							<div class="s-desc"><%= amenity %></div>
 						</li>
 
 						<% }); %>
