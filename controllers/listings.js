@@ -1,6 +1,7 @@
 const Listing = require("../models/listings");
 const amenities = require("../utils/amenities");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
+const allSVGs = require("../utils/SVGs");
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
@@ -22,7 +23,7 @@ module.exports.showListings = async (req, res) => {
 		req.flash("error", "Listing not found!");
 		return res.redirect("/listings");
 	}
-	res.render("./listings/show.ejs", { listing, amenities });
+	res.render("./listings/show.ejs", { listing, amenities, allSVGs });
 };
 
 module.exports.createListing = async (req, res) => {

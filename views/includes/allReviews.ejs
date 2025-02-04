@@ -1,6 +1,9 @@
 <!-- All Reviews -->
+<script>
+	const svgData = <%- JSON.stringify(allSVGs) %>;
+</script>
 <div
-	class="col-lg-8 col-md-8 col-sm-8 offset-lg-2 offset-md-2 offset-sm-2 offset-0"
+	class="col-xl-12 col-md-8 col-sm-8 offset-lg-0 offset-md-2 offset-sm-2 offset-0"
 >
 	<div
 		class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1"
@@ -13,10 +16,10 @@
 				<p class="card-subtitle text-body-secondary fs-6 mb-2">
 					6 years on Airbnb
 				</p>
-				<small class="card-text fw-semibold">
-					<p class="starability-result" data-rating="<%= review.rating %>"></p>
-					· <%= new Date(review.createdAt).toDateString() %>
-				</small>
+				<p class="card-text fw-semibold s-ratings">
+					<span class="s-rated"><%= review.rating %></span>
+					<span> · <%= new Date(review.createdAt).toDateString() %></span>
+				</p>
 				<p class="card-text mb-2 mt-0"><%= review.comment %></p>
 
 				<div class="row row-cols-lg-3">
@@ -36,3 +39,4 @@
 		<% } %>
 	</div>
 </div>
+<script src="../js/showRatings.js"></script>
