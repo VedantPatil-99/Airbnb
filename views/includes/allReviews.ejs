@@ -21,6 +21,7 @@
 
 				<div class="row row-cols-lg-3">
 					<a href="#" class="card-link">Show More</a>
+					<% if (currUser) { %>
 					<form
 						action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
 						method="post"
@@ -28,6 +29,7 @@
 					>
 						<button type="submit" class="btn btn-dark btn-sm">Delete</button>
 					</form>
+					<% } %>
 				</div>
 			</div>
 		</div>
