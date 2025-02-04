@@ -16,9 +16,12 @@
 				<p class="card-subtitle text-body-secondary fs-6 mb-2">
 					6 years on Airbnb
 				</p>
-				<p class="card-text fw-semibold s-ratings">
-					<span class="s-rated"><%= review.rating %></span>
-					<span> · <%= new Date(review.createdAt).toDateString() %></span>
+				<p
+					class="fw-semibold s-ratings d-flex justify-content-start align-items-center"
+				>
+					<span class="s-rated d-flex w-auto"><%= review.rating %></span>
+					<span class="dot px-1">· </span>
+					<span><%= new Date(review.createdAt).toDateString() %></span>
 				</p>
 				<p class="card-text mb-2 mt-0"><%= review.comment %></p>
 
