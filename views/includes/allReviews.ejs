@@ -12,10 +12,20 @@
 
 		<div class="card my-3 bg-light">
 			<div class="card-body h-auto p-0">
-				<h6 class="card-title m-0"><%= review.author.username %></h6>
-				<p class="card-subtitle text-body-secondary fs-6 mb-2">
-					6 years on Airbnb
-				</p>
+				<div class="d-flex flex-row align-items-">
+					<img
+						src="../icons/filterIcons/Naruto.jpg"
+						alt="host-dp"
+						class="rounded-circle h-25 host-overview-dp"
+					/>
+					<div class="ms-3">
+						<h6 class="card-title mb-1"><%= review.author.username %></h6>
+						<p class="card-subtitle text-secondary mb-2 r-subtitle">
+							6 years on Airbnb
+						</p>
+					</div>
+				</div>
+
 				<p
 					class="fw-semibold s-ratings d-flex justify-content-start align-items-center"
 				>
@@ -23,7 +33,7 @@
 					<span class="dot px-1">· </span>
 					<span><%= new Date(review.createdAt).toDateString() %></span>
 				</p>
-				<p class="card-text mb-2 mt-0"><%= review.comment %></p>
+				<p class="card-text r-comment mb-2 mt-0"><%= review.comment %></p>
 
 				<div class="row row-cols-lg-3">
 					<a href="#" class="card-link">Show More</a>
