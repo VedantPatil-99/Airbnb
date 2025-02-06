@@ -2,16 +2,17 @@
 <script>
 	const svgData = <%- JSON.stringify(allSVGs) %>;
 </script>
-<div
-	class="col-xl-12 col-md-8 col-sm-8 offset-lg-0 offset-md-2 offset-sm-2 offset-0"
->
-	<div
-		class="row row-cols-xl-2 row-cols-lg-2 row-cols-md-2 row-cols-sm-1 row-cols-1"
-	>
-		<% for( review of listing.reviews) { %>
-
+<div class="col-12 py-4 border-bottom">
+	<div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+		<% let count = 0; %> <% if (listing.reviews.length === 0) { %>
+		<!-- . -->
+		<h4>No Reviews Available.</h4>
+		<% } else { %>
+		<!-- . -->
+		<% for (let review of listing.reviews) { %> <% if (review && count < 6) { %>
+		<!-- . -->
 		<div class="card my-3 bg-light">
-			<div class="card-body h-auto p-0">
+			<div class="card-body h-auto pe-2">
 				<div class="d-flex flex-row align-items-">
 					<img
 						src="../icons/filterIcons/Naruto.jpg"
@@ -27,16 +28,19 @@
 				</div>
 
 				<p
-					class="fw-semibold s-ratings d-flex justify-content-start align-items-center"
+					class="fw-semibold s-ratings d-flex justify-content-start align-items-center m-1"
 				>
 					<span class="s-rated d-flex w-auto"><%= review.rating %></span>
-					<span class="dot px-1">· </span>
-					<span><%= new Date(review.createdAt).toDateString() %></span>
+					<span class="dot px-1">·</span>
+					<span class="r-date"
+						><%= new Date(review.createdAt).toDateString() %></span
+					>
 				</p>
+
 				<p class="card-text r-comment mb-2 mt-0"><%= review.comment %></p>
 
 				<div class="row row-cols-lg-3">
-					<a href="#" class="card-link">Show More</a>
+					<a href="#" class="card-link r-link link-dark">Show More</a>
 					<% if (currUser) { %>
 					<form
 						action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
@@ -49,7 +53,17 @@
 				</div>
 			</div>
 		</div>
-		<% } %>
+
+		<% count++; %> <% } %> <% } %> <% } %>
 	</div>
+	<button
+		type="button"
+		class="btn btn-outline-dark my-4 s-desc col-sm-4 col-12 p-2 review-btn"
+		data-bs-toggle="modal"
+		data-bs-target="#show-reviews-modal"
+	>
+		Show all reviews
+	</button>
 </div>
+
 <script src="../js/showRatings.js"></script>

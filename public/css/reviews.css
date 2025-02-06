@@ -4,8 +4,23 @@
 
 .r-comment {
 	display: -webkit-box;
-	line-clamp: 6;
+	line-clamp: 3;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
+}
+
+.r-comment {
+	font-size: 1.06rem;
+	font-weight: 460;
+	line-height: 1.4;
+}
+
+.r-date {
+	font-weight: 560;
+}
+
+.r-link {
+	font-size: 1.06rem;
+	font-weight: 650;
 }
