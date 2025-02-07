@@ -11,16 +11,18 @@
 }
 
 .r-comment {
-	font-size: 1.06rem;
+	font-size: 1rem;
 	font-weight: 460;
 	line-height: 1.4;
 }
 
 .r-date {
 	font-weight: 560;
+	font-size: 0.9rem;
 }
 
+.r-title,
 .r-link {
-	font-size: 1.06rem;
+	font-size: 1rem;
 	font-weight: 650;
 }

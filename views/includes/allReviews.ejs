@@ -20,7 +20,9 @@
 						class="rounded-circle h-25 host-overview-dp"
 					/>
 					<div class="ms-3">
-						<h6 class="card-title mb-1"><%= review.author.username %></h6>
+						<h6 class="card-title mb-1 r-title">
+							<%= review.author.username %>
+						</h6>
 						<p class="card-subtitle text-secondary mb-2 r-subtitle">
 							6 years on Airbnb
 						</p>
@@ -56,6 +58,7 @@
 
 		<% count++; %> <% } %> <% } %> <% } %>
 	</div>
+	<% if (listing.reviews.length != 0) { %>
 	<button
 		type="button"
 		class="btn btn-outline-dark my-4 s-desc col-sm-4 col-12 p-2 review-btn"
@@ -64,6 +67,7 @@
 	>
 		Show all reviews
 	</button>
+	<% } %>
 </div>
 
 <script src="../js/showRatings.js"></script>
