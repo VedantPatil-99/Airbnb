@@ -13,32 +13,35 @@
 		<!-- . -->
 		<div class="card my-3 bg-light">
 			<div class="card-body h-auto pe-2">
-				<div class="d-flex flex-row align-items-">
-					<img
-						src="../icons/filterIcons/Naruto.jpg"
-						alt="host-dp"
-						class="rounded-circle h-25 host-overview-dp"
-					/>
-					<div class="ms-3">
-						<h6 class="card-title mb-1 r-title">
-							<%= review.author.username %>
-						</h6>
-						<p class="card-subtitle text-secondary mb-2 r-subtitle">
-							6 years on Airbnb
-						</p>
-					</div>
-				</div>
-
-				<p
-					class="fw-semibold s-ratings d-flex justify-content-start align-items-center m-1"
+				<div
+					class="mb-2 d-flex flex-column justify-content-between h-auto gap-2"
 				>
-					<span class="s-rated d-flex w-auto"><%= review.rating %></span>
-					<span class="dot px-1">·</span>
-					<span class="r-date"
-						><%= new Date(review.createdAt).toDateString() %></span
-					>
-				</p>
+					<div class="d-flex flex-row">
+						<img
+							src="../icons/filterIcons/Naruto.jpg"
+							alt="host-dp"
+							class="rounded-circle h-25 host-overview-dp"
+						/>
+						<div class="ms-3">
+							<h6 class="card-title mb-1 r-title">
+								<%= review.author.username %>
+							</h6>
+							<p class="card-subtitle text-secondary mb-2 r-subtitle">
+								6 years on Airbnb
+							</p>
+						</div>
+					</div>
 
+					<p
+						class="fw-semibold s-ratings d-flex justify-content-start align-items-center m-0"
+					>
+						<span class="s-rated d-flex w-auto"><%= review.rating %></span>
+						<span class="dot px-1">·</span>
+						<span class="r-date"
+							><%= new Date(review.createdAt).toDateString() %></span
+						>
+					</p>
+				</div>
 				<p class="card-text r-comment mb-2 mt-0"><%= review.comment %></p>
 
 				<div class="row row-cols-lg-3">
