@@ -23,10 +23,11 @@ containerMap.appendChild(frontSide);
 containerMap.appendChild(backSide);
 
 mapboxgl.accessToken = mapToken;
+
 const map = new mapboxgl.Map({
 	container: "map", // container ID
 	center: listing.geometry.coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
-	zoom: 10.27, // starting zoom
+	zoom: 14, // starting zoom
 });
 
 // Create a single popup to be used for both marker and hover
@@ -50,6 +51,8 @@ map.addControl(new mapboxgl.NavigationControl());
 
 // disable map zoom when using scroll
 map.scrollZoom.disable();
+
+map.addControl(new mapboxgl.FullscreenControl());
 
 map.on("mouseenter", "markers", (e) => {
 	// Change the cursor style as a UI indicator.
