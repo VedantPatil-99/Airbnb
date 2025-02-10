@@ -24,8 +24,16 @@
 					<h4 class="modal-title mb-3 fw-bold" id="staticBackdropLabel">
 						Num of reviews
 					</h4>
-					<% const popMsg = `
-					<div>
+					<a
+						tabindex="0"
+						class="link-secondary"
+						role="button"
+						data-bs-custom-class="custom-popover"
+						data-bs-toggle="popover"
+						data-bs-trigger="focus"
+						data-bs-placement="bottom"
+						data-bs-html="true"
+						data-bs-content="
 						<p>
 							Reviews from past guests help our community learn more about each
 							home. By default, reviews are sorted by recency.
@@ -40,18 +48,74 @@
 							label,listings need 5 or more recent reviews. Criteria is subject
 							to change.
 						</p>
-					</div>
-					` %>
-					<a
-						tabindex="0"
-						class="link-secondary"
-						role="button"
-						data-bs-toggle="popover"
-						data-bs-trigger="focus"
-						data-bs-title="Dismissible popover"
-						data-bs-content="${popMsg}"
+						"
 						>Learn how reviews work
 					</a>
+				</div>
+				<div class="col-12 py-4 border-bottom">
+					<div class="row row-cols-md-2 row-cols-sm-1 row-cols-1">
+						<% if (listing.reviews.length === 0) { %>
+						<!-- . -->
+						<h4>No Reviews Available.</h4>
+						<% } else { %>
+						<!-- . -->
+						<% for (let review of listing.reviews) { %>
+						<!-- . -->
+						<div class="card my-3 bg-light">
+							<div class="card-body h-auto pe-2">
+								<div
+									class="mb-2 d-flex flex-column justify-content-between h-auto gap-2"
+								>
+									<div class="d-flex flex-row">
+										<img
+											src="../icons/filterIcons/Naruto.jpg"
+											alt="host-dp"
+											class="rounded-circle h-25 host-overview-dp"
+										/>
+										<div class="ms-3">
+											<h6 class="card-title mb-1 r-title">
+												<%= review.author.username %>
+											</h6>
+											<p class="card-subtitle text-secondary mb-2 r-subtitle">
+												6 years on Airbnb
+											</p>
+										</div>
+									</div>
+
+									<p
+										class="fw-semibold s-ratings d-flex justify-content-start align-items-center m-0"
+									>
+										<span class="s-rated d-flex w-auto"
+											><%= review.rating %></span
+										>
+										<span class="dot px-1">·</span>
+										<span class="r-date"
+											><%= new Date(review.createdAt).toDateString() %></span
+										>
+									</p>
+								</div>
+								<p class="card-text r-comment mb-2 mt-0">
+									<%= review.comment %>
+								</p>
+
+								<div class="row row-cols-lg-3">
+									<a href="#" class="card-link r-link link-dark">Show More</a>
+									<% if (currUser) { %>
+									<form
+										action="/listings/<%= listing._id %>/reviews/<%= review._id %>/?_method=DELETE"
+										method="post"
+										class="m-0 p-0"
+									>
+										<button type="submit" class="btn btn-dark btn-sm">
+											Delete
+										</button>
+									</form>
+									<% } %>
+								</div>
+							</div>
+						</div>
+						<% } %> <% } %>
+					</div>
 				</div>
 			</div>
 		</div>
