@@ -1,6 +1,6 @@
 # Airbnb
 
-This is the Airbnb Web App Clone
+This is the Airbnb Web App Clone (Full stack project)
 
 ## Airbnb first look
 
