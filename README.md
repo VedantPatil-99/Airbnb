@@ -134,3 +134,133 @@ flowchart TB
     classDef database fill:#FFA726,stroke:#F57C00,color:white
     classDef init fill:#90A4AE,stroke:#607D8B,color:white
 ```
+
+```Folder structure
+Airbnb/
+├─ .env
+├─ .gitignore
+├─ .vscode/
+│  └─ settings.json
+├─ app.js
+├─ cloudConfig.js
+├─ controllers/
+│  ├─ listings.js
+│  ├─ reviews.js
+│  └─ users.js
+├─ init/
+│  ├─ data.js
+│  ├─ index.js
+│  └─ oldData.js
+├─ middleware.js
+├─ models/
+│  ├─ listings.js
+│  ├─ review.js
+│  └─ user.js
+├─ package-lock.json
+├─ package.json
+├─ public/
+│  ├─ css/
+│  │  ├─ curnc_langM.css
+│  │  ├─ filters.css
+│  │  ├─ footer.css
+│  │  ├─ map.css
+│  │  ├─ rating.css
+│  │  ├─ reviews.css
+│  │  ├─ showDetails.css
+│  │  └─ style.css
+│  ├─ icons/
+│  │  ├─ Airbnb_firstlook.png
+│  │  ├─ Airbnb_icon.png
+│  │  └─ filterIcons/
+│  │     ├─ a-frames.jpg
+│  │     ├─ amazing_pools.jpg
+│  │     ├─ amazing_views.jpg
+│  │     ├─ arctic.jpg
+│  │     ├─ beach.jpg
+│  │     ├─ beachfront.jpg
+│  │     ├─ bed&breakfasts.jpg
+│  │     ├─ boats.jpg
+│  │     ├─ cabins.jpg
+│  │     ├─ camping.jpg
+│  │     ├─ castles.jpg
+│  │     ├─ caves.jpg
+│  │     ├─ countryside.jpg
+│  │     ├─ creative-spaces.jpg
+│  │     ├─ desert.jpg
+│  │     ├─ design.jpg
+│  │     ├─ domes.jpg
+│  │     ├─ farms.jpg
+│  │     ├─ golfing.jpg
+│  │     ├─ historical-homes.jpg
+│  │     ├─ island.jpg
+│  │     ├─ lake.jpg
+│  │     ├─ lakefront.jpg
+│  │     ├─ luxe.jpg
+│  │     ├─ mansions.jpg
+│  │     ├─ minsus.jpg
+│  │     ├─ Naruto.jpg
+│  │     ├─ off-the-grid.jpg
+│  │     ├─ OMG.jpg
+│  │     ├─ parks.jpg
+│  │     ├─ rooms.jpg
+│  │     ├─ tiny-homes.jpg
+│  │     ├─ top-cities.jpg
+│  │     ├─ top-of-the-world.jpg
+│  │     ├─ towers.jpg
+│  │     ├─ treehouses.jpg
+│  │     ├─ trending.jpg
+│  │     ├─ tropical.jpg
+│  │     └─ windmills.jpg
+│  └─ js/
+│     ├─ amenities.js
+│     ├─ currencyM.js
+│     ├─ filters.js
+│     ├─ langM.js
+│     ├─ map.js
+│     ├─ randomDays.js
+│     ├─ script.js
+│     ├─ searchBar.js
+│     └─ showRatings.js
+├─ README.md
+├─ routes/
+│  ├─ listing.js
+│  ├─ review.js
+│  └─ user.js
+├─ schema.js
+├─ utils/
+│  ├─ amenities.js
+│  ├─ ExpressError.js
+│  ├─ SVGs.js
+│  └─ wrapAsync.js
+└─ views/
+   ├─ error.ejs
+   ├─ includes/
+   │  ├─ addReviews.ejs
+   │  ├─ allReviews.ejs
+   │  ├─ filters.ejs
+   │  ├─ flash.ejs
+   │  ├─ footer.ejs
+   │  ├─ logo.ejs
+   │  ├─ modalBox/
+   │  │  ├─ allReviewsM.ejs
+   │  │  ├─ currencyM.ejs
+   │  │  ├─ filtersM.ejs
+   │  │  ├─ langM.ejs
+   │  │  ├─ logModal.ejs
+   │  │  ├─ modal.ejs
+   │  │  ├─ showAmenitiesM.ejs
+   │  │  └─ showDescM.ejs
+   │  ├─ navbar.ejs
+   │  ├─ searchBar.ejs
+   │  └─ showDetails.ejs
+   ├─ layouts/
+   │  └─ boilerplate.ejs
+   ├─ listings/
+   │  ├─ edit.ejs
+   │  ├─ index.ejs
+   │  ├─ new.ejs
+   │  └─ show.ejs
+   └─ users/
+      ├─ login.ejs
+      └─ signup.ejs
+```
