@@ -160,11 +160,12 @@ Airbnb/
 ├─ package.json
 ├─ public/
 │  ├─ css/
-│  │  ├─ curnc_langM.css
+│  │  ├─ components/
+│  │  │  ├─ curnc_langM.css
+│  │  │  ├─ footer.css
+│  │  │  ├─ map.css
+│  │  │  └─ rating.css
 │  │  ├─ filters.css
-│  │  ├─ footer.css
-│  │  ├─ map.css
-│  │  ├─ rating.css
 │  │  ├─ reviews.css
 │  │  ├─ showDetails.css
 │  │  └─ style.css
@@ -211,16 +212,24 @@ Airbnb/
 │  │     ├─ trending.jpg
 │  │     ├─ tropical.jpg
 │  │     └─ windmills.jpg
-│  └─ js/
-│     ├─ amenities.js
-│     ├─ currencyM.js
-│     ├─ filters.js
-│     ├─ langM.js
-│     ├─ map.js
-│     ├─ randomDays.js
-│     ├─ script.js
-│     ├─ searchBar.js
-│     └─ showRatings.js
+│  ├─ js/
+│  │  ├─ amenities.js
+│  │  ├─ bootstrap.js
+│  │  ├─ components/
+│  │  │  ├─ currencyM.js
+│  │  │  ├─ langM.js
+│  │  │  ├─ map.js
+│  │  │  ├─ searchBar.js
+│  │  │  └─ showRatings.js
+│  │  ├─ filters.js
+│  │  └─ randomDays.js
+│  └─ screenshots/
+│     ├─ show.ejs.png
+│     ├─ show2.ejs.png
+│     ├─ show3.ejs.png
+│     ├─ show4.ejs.png
+│     ├─ show5.ejs.png
+│     └─ show6.ejs.png
 ├─ README.md
 ├─ routes/
 │  ├─ listing.js
@@ -235,12 +244,13 @@ Airbnb/
 └─ views/
    ├─ error.ejs
    ├─ includes/
-   │  ├─ addReviews.ejs
-   │  ├─ allReviews.ejs
+   │  ├─ components/
+   │  │  ├─ flash.ejs
+   │  │  ├─ footer.ejs
+   │  │  ├─ logo.ejs
+   │  │  ├─ navbar.ejs
+   │  │  └─ searchBar.ejs
    │  ├─ filters.ejs
-   │  ├─ flash.ejs
-   │  ├─ footer.ejs
-   │  ├─ logo.ejs
    │  ├─ modalBox/
    │  │  ├─ allReviewsM.ejs
    │  │  ├─ currencyM.ejs
@@ -250,8 +260,6 @@ Airbnb/
    │  │  ├─ modal.ejs
    │  │  ├─ showAmenitiesM.ejs
    │  │  └─ showDescM.ejs
-   │  ├─ navbar.ejs
-   │  ├─ searchBar.ejs
    │  └─ showDetails.ejs
    ├─ layouts/
    │  └─ boilerplate.ejs
@@ -260,7 +268,11 @@ Airbnb/
    │  ├─ index.ejs
    │  ├─ new.ejs
    │  └─ show.ejs
+   ├─ reviews/
+   │  ├─ addReviews.ejs
+   │  └─ allReviews.ejs
    └─ users/
       ├─ login.ejs
       └─ signup.ejs
+
 ```
