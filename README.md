@@ -8,6 +8,14 @@ This screenshot is after 60% completion.
 
 ![Airbnb first look](public/icons/Airbnb_firstlook.png)
 
+#### Show Page UI
+![show.ejs](public/screenshots/show.ejs.png)
+![show.ejs](public/screenshots/show2.ejs.png)
+![show.ejs](public/screenshots/show3.ejs.png)
+![show.ejs](public/screenshots/show4.ejs.png)
+![show.ejs](public/screenshots/show5.ejs.png)
+![show.ejs](public/screenshots/show6.ejs.png)
+
 ## Web Application Architecture
 
 ```mermaid
