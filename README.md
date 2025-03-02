@@ -8,7 +8,8 @@ This screenshot is after 60% completion.
 
 ![Airbnb first look](public/icons/Airbnb_firstlook.png)
 
-#### Show Page UI
+### Show Page UI
+
 ![show.ejs](public/screenshots/show.ejs.png)
 ![show.ejs](public/screenshots/show2.ejs.png)
 ![show.ejs](public/screenshots/show3.ejs.png)
